@@ -1,3 +1,9 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .navbar .nav-link.get-started {
   color: white !important;
   background-color: green;
@@ -63,4 +69,42 @@
   background-color: green;
   margin-top: 8px;
   border-radius: 10px;
+}
+
+.main-title {
+  font-weight: 700;
+  color: #2e9b08;
+}
+
+.title-icons-container {
+  color: white;
+  background-color: #2e9b08;
+  padding: 15px 0;
+  border-radius: 10px;
+}
+
+.icons-section {
+  position: relative;
+  background-color: #222;
+  color: white;
+  overflow: hidden;
+}
+
+.icons-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 10%;
+  background: white;
+  clip-path: polygon(1 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 0;
+}
+
+.row,
+.col-12,
+.title-icons-container {
+  position: relative;
+  z-index: 1;
 }

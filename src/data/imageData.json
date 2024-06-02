@@ -1,0 +1,26 @@
+[
+  {
+    "src": "/src/assets/Icon Sampah Organik.png",
+    "title": "Sampah Organik"
+  },
+  {
+    "src": "/src/assets/Icon Sampah Non Organik.png",
+    "title": "Sampah Non Organik"
+  },
+  {
+    "src": "/src/assets/Icon Sampah B3.png",
+    "title": "Sampah B3"
+  },
+  {
+    "src": "/src/assets/Icon Sampah Medis.png",
+    "title": "Sampah Medis"
+  },
+  {
+    "src": "/src/assets/Icon Sampah Non Medis.png",
+    "title": "Sampah B3"
+  },
+  {
+    "src": "/src/assets/Icon Sampah Residu.png",
+    "title": "Sampah Residu"
+  }
+]

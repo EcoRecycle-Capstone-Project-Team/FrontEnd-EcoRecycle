@@ -2,9 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import Navigation from "./component/Navigation";
 import Homepage from "./pages/Homepage";
 import Footer from "./component/Footer";
-
-import "./style/style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./style/style.css";
 
 function App() {
   return (
