@@ -1,22 +1,26 @@
 import AnimatedSection from "../component/AnimatedSection";
 import PropTypes from "prop-types";
+import teamProfile from "../data/teamProfiles.json";
+import NameCardList from "../component/NameCardList";
 
 export default function AboutUsPage() {
   return (
     <div className="container mt-2 mb-2">
-      <header className="header-container d-flex justify-content-center">
-        <div className="header-text">
-          <h1 className="header-title">
-            Eco<span className="header-highlight">Recycle</span>
-          </h1>
-          <h2 className="header-subtitle">Capstone Team</h2>
-        </div>
-        <img
-          src="./src/assets/Recycle.png"
-          alt="EcoRecycle Logo"
-          className="header-logo"
-        />
-      </header>
+      <AnimatedSection>
+        <header className="header-container d-flex justify-content-center">
+          <div className="header-text">
+            <h1 className="header-title">
+              Eco<span className="header-highlight">Recycle</span>
+            </h1>
+            <h2 className="header-subtitle">Capstone Team</h2>
+          </div>
+          <img
+            src="./src/assets/Recycle.png"
+            alt="EcoRecycle Logo"
+            className="header-logo"
+          />
+        </header>
+      </AnimatedSection>
 
       <AnimatedSection>
         <section className="mb-5 mt-5">
@@ -104,35 +108,7 @@ export default function AboutUsPage() {
           <h1 className="aboutus-subtitle text-center">
             Our <span className="aboutus-title-highlight">Team</span>
           </h1>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="card">
-                <div className="bg-secondary" style={{ height: "200px" }}></div>
-                <div className="card-body text-center">
-                  <h5 className="card-title">Isep Firmansyah</h5>
-                  <p className="card-text">Back End Engineer</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <div className="bg-secondary" style={{ height: "200px" }}></div>
-                <div className="card-body text-center">
-                  <h5 className="card-title">M. Natasya Ramadana</h5>
-                  <p className="card-text">Front End & UI/UX</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <div className="bg-secondary" style={{ height: "200px" }}></div>
-                <div className="card-body text-center">
-                  <h5 className="card-title">M. Agus Dharma Killin</h5>
-                  <p className="card-text">Front End & Project Manager</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <NameCardList team={teamProfile} />
         </section>
       </AnimatedSection>
     </div>
