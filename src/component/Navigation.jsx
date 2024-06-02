@@ -35,7 +35,9 @@ export default function Navigation() {
                 Form Pelaporan Lokasi
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#">About Us</Nav.Link>
+            <Nav.Link as={Link} to="/AboutUs">
+              About Us
+            </Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link as={Link} to="/login">

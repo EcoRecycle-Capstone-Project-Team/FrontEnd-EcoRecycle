@@ -108,3 +108,80 @@ body {
   position: relative;
   z-index: 1;
 }
+
+.aboutus-subtitle {
+  font-weight: 700;
+  font-size: 5em;
+  color: #2e9b08;
+}
+
+.aboutus-title-highlight {
+  color: black;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo {
+  height: 120px;
+  width: auto;
+}
+
+.header-title {
+  font-weight: 700;
+  font-size: 6em;
+  color: #2e9b08;
+}
+
+.header-subtitle {
+  font-weight: 700;
+  font-size: 3em;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-highlight {
+  color: rgba(121, 147, 81, 0.53);
+}
+
+@media (max-width: 992px) {
+  .header-logo {
+    height: 100px;
+  }
+
+  .header-title {
+    font-size: 4em;
+  }
+
+  .header-subtitle {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; /* Stack logo and text vertically on small screens */
+  }
+
+  .header-logo {
+    height: 80px; /* Even smaller logo for small screens */
+  }
+
+  .header-title,
+  .header-subtitle {
+    text-align: center; /* Ensures text is centered when stacked */
+    font-size: 3em; /* Smaller font size for smaller screens */
+  }
+
+  .header-subtitle {
+    font-size: 1.5em; /* Smaller font size for smaller screens */
+  }
+}
