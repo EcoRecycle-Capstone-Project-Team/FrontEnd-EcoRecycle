@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "5 Jenis Sampah yang dapat diolah dan dikembangkan",
+    "date": "32 Februari 2023",
+    "image": "./src/assets/article1.png",
+    "content": "Konten lengkap artikel pertama..."
+  },
+  {
+    "id": 2,
+    "title": "5 Step Menjadi Peduli Terhadap Lingkungan",
+    "date": "25 Maret 2022",
+    "image": "./src/assets/article2.png",
+    "content": "Konten lengkap artikel kedua..."
+  },
+  {
+    "id": 3,
+    "title": "Tutorial Convert Dosa menjadi saldo Dana",
+    "date": "12 November 2023",
+    "image": "./src/assets/article3.png",
+    "content": "Konten lengkap artikel ketiga..."
+  }
+]

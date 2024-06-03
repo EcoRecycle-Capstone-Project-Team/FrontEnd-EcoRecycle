@@ -26,7 +26,9 @@ export default function Navigation() {
                 Lokasi Bank Sampah
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#">Edukasi</Nav.Link>
+            <Nav.Link as={Link} to="/edukasi">
+              Edukasi
+            </Nav.Link>
             <NavDropdown title="Form Pelaporan" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
                 Form Pelaporan Sampah
@@ -35,7 +37,7 @@ export default function Navigation() {
                 Form Pelaporan Lokasi
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/AboutUs">
+            <Nav.Link as={Link} to="/aboutUs">
               About Us
             </Nav.Link>
           </Nav>

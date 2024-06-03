@@ -6,6 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AboutUsPage from "./pages/AboutUs";
 
 import "./style/style.css";
+import EducationPage from "./pages/EducationPage";
+import ArticleDetail from "./component/ArticleDetail";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
@@ -14,7 +18,11 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/AboutUs" element={<AboutUsPage />} />
+          <Route path="/aboutUs" element={<AboutUsPage />} />
+          <Route path="/edukasi" element={<EducationPage />} />
+          <Route path="/edukasi/Artikel/:id" element={<ArticleDetail />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Routes>
       </main>
       <Footer />

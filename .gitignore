@@ -11,6 +11,10 @@ node_modules/
 dist
 dist-ssr
 *.local
+src/pages/EducationPage.jsx
+src/component/ArticleDetail.jsx
+src/component/ArticleList.jsx
+src/data/articlesData.json
 
 # Editor directories and files
 .vscode/*

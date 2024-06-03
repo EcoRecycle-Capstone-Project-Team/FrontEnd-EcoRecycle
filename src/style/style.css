@@ -211,3 +211,57 @@ body {
     font-size: 1.5em; /* Smaller font size for smaller screens */
   }
 }
+
+.login-section {
+  width: 100%; /* Full width by default */
+  max-width: 485px; /* Maximum width */
+  margin: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-section {
+    padding: 3rem 1rem; /* Smaller padding on smaller screens */
+  }
+}
+
+.login-input {
+  width: 100%;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.password-help {
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-button,
+.register-button {
+  background-color: green;
+  color: white;
+  border: none;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-muted {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+  .login-button {
+    width: 100%;
+  }
+}
