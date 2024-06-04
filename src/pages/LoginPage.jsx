@@ -1,11 +1,20 @@
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import LoginInput from "../component/LoginInput";
 import AnimatedSection from "../component/AnimatedSection";
+import { useEffect } from "react";
 
-export default function LoginPage() {
+const LoginPage = () => {
   const navigate = useNavigate();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
-  const onLogin = () => {
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn, navigate]);
+
+  const handleLogin = () => {
     navigate("/");
   };
 
@@ -22,9 +31,11 @@ export default function LoginPage() {
         </div>
         <section className="shadow p-5 mb-5 bg-white rounded login-section">
           <h2 className="text-center mb-4">EcoRecycle</h2>
-          <LoginInput login={onLogin} />
+          <LoginInput onLogin={handleLogin} />
         </section>
       </main>
     </AnimatedSection>
   );
-}
+};
+
+export default LoginPage;

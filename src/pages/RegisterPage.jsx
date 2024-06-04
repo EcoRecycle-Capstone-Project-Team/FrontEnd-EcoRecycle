@@ -1,11 +1,23 @@
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { registerUserAsync } from "../redux/authSlice";
 import RegisterInput from "../component/RegisterInput";
 import AnimatedSection from "../component/AnimatedSection";
+import { useEffect } from "react";
 
 export default function RegisterPage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
-  const onRegister = () => {
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn, navigate]);
+
+  const handleRegister = ({ username, email, password }) => {
+    dispatch(registerUserAsync({ username, email, password }));
     navigate("/");
   };
 
@@ -22,7 +34,7 @@ export default function RegisterPage() {
         </div>
         <section className="shadow p-5 mb-5 bg-white rounded login-section">
           <h2 className="text-center mb-4">EcoRecycle</h2>
-          <RegisterInput register={onRegister} />
+          <RegisterInput register={handleRegister} />
         </section>
       </main>
     </AnimatedSection>

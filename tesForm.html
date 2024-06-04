@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form dengan Peta</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6i6_yN1sttL0vPFRfz3kCiJcvQJ6mQe0&libraries=places"></script>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Form dengan Peta</h3>
+    <div id="map"></div>
+    <form id="locationForm" enctype="multipart/form-data">
+      <label for="user_id">User ID:</label>
+      <input type="text" id="user_id" name="user_id" required />
+      <br />
+      <label for="nama_pelapor">Nama Pelapor:</label>
+      <input type="text" id="nama_pelapor" name="nama_pelapor" required />
+      <br />
+      <label for="no_tlp">No Telepon:</label>
+      <input type="text" id="no_tlp" name="no_tlp" required />
+      <br />
+      <label for="jenis_lokasi">Jenis Lokasi:</label>
+      <input type="text" id="jenis_lokasi" name="jenis_lokasi" required />
+      <br />
+      <label for="nama_lokasi">Nama Lokasi:</label>
+      <input type="text" id="nama_lokasi" name="nama_lokasi" required />
+      <br />
+      <label for="alamat">Alamat:</label>
+      <input type="text" id="address" name="alamat" required />
+      <br />
+      <label for="kota">Kota:</label>
+      <input type="text" id="kota" name="kota" required />
+      <br />
+      <label for="kode_pos">Kode Pos:</label>
+      <input type="text" id="kode_pos" name="kode_pos" required />
+      <br />
+      <label for="provinsi">Provinsi:</label>
+      <input type="text" id="provinsi" name="provinsi" required />
+      <br />
+      <label for="lat">Latitude:</label>
+      <input type="text" id="lat" name="latitude" readonly />
+      <br />
+      <label for="lng">Longitude:</label>
+      <input type="text" id="lng" name="longitude" readonly />
+      <br />
+      <label for="img_tpa">Upload Image:</label>
+      <input
+        type="file"
+        id="img_tpa"
+        name="img_tpa"
+        accept="image/*"
+        required
+      />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      let map;
+      let marker;
+      let geocoder;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -6.2, lng: 106.816666 },
+          zoom: 13,
+        });
+
+        geocoder = new google.maps.Geocoder();
+
+        map.addListener("click", function (event) {
+          placeMarker(event.latLng);
+          getAddress(event.latLng);
+        });
+      }
+
+      function placeMarker(location) {
+        if (marker) {
+          marker.setPosition(location);
+        } else {
+          marker = new google.maps.Marker({
+            position: location,
+            map: map,
+          });
+        }
+
+        document.getElementById("lat").value = location.lat();
+        document.getElementById("lng").value = location.lng();
+      }
+
+      function getAddress(latLng) {
+        geocoder.geocode({ location: latLng }, function (results, status) {
+          if (status === "OK") {
+            if (results[0]) {
+              document.getElementById("address").value =
+                results[0].formatted_address;
+            } else {
+              window.alert("No results found");
+            }
+          } else {
+            window.alert("Geocoder failed due to: " + status);
+          }
+        });
+      }
+
+      document
+        .getElementById("locationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const formData = new FormData(event.target);
+
+          fetch("https://isepwebtim.my.id/report/newtpa", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Success:", data);
+              alert("Laporan berhasil dikirim!");
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Gagal mengirim laporan.");
+            });
+        });
+
+      window.onload = initMap;
+    </script>
+  </body>
+</html>

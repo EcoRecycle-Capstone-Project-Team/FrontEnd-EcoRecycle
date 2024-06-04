@@ -1,27 +1,48 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import useInput from "../hooks/useInput";
-import { Form, Button, FloatingLabel, Nav, Toast } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  FloatingLabel,
+  Nav,
+  Toast,
+  Alert,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { format } from "date-fns";
+import { useDispatch, useSelector } from "react-redux";
+import { registerUserAsync } from "../redux/authSlice";
 
 export default function RegisterInput({ register }) {
-  const [name, onNameChange] = useInput("");
+  const [username, onNameChange] = useInput("");
   const [email, onEmailChange] = useInput("");
   const [password, onPasswordChange] = useInput("");
   const [repassword, onRepasswordChange] = useInput("");
   const [showToast, setShowToast] = useState(false);
+  const dispatch = useDispatch();
+  const error = useSelector((state) => state.auth.error);
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     if (password !== repassword) {
       setShowToast(true);
       return;
     }
-    register({ name, email, password });
-  };
 
-  const now = new Date();
-  const formattedDate = format(now, "HH:mm:ss");
+    try {
+      const response = await dispatch(
+        registerUserAsync({ username, email, password })
+      );
+      const { status, message } = response.payload;
+
+      if (status === "success") {
+        register();
+      } else {
+        error(message);
+      }
+    } catch (error) {
+      console.error("Registration Error:", error.message);
+    }
+  };
 
   return (
     <Form className="register-input form-floating mt-5">
@@ -33,7 +54,7 @@ export default function RegisterInput({ register }) {
         <Form.Control
           type="text"
           placeholder="Full name"
-          value={name}
+          value={username}
           onChange={onNameChange}
           className="form-control"
         />
@@ -77,6 +98,7 @@ export default function RegisterInput({ register }) {
           className="form-control"
         />
       </FloatingLabel>
+      {error && <Alert variant="danger">{error}</Alert>}
       <div className="button-container">
         <Button
           type="button"
@@ -121,7 +143,6 @@ export default function RegisterInput({ register }) {
               style={{ width: "25px", height: "auto" }}
             />
             <strong className="me-auto">Admin EcoRecycle</strong>
-            <small>{formattedDate}</small>
           </Toast.Header>
           <Toast.Body>Passwordnya kagak mirip Boss!!!!!</Toast.Body>
         </Toast>
