@@ -52,9 +52,13 @@ export default function Navigation() {
               <NavDropdown.Item href="#action/3.1">
                 Form Pelaporan Sampah
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Form Pelaporan Lokasi
-              </NavDropdown.Item>
+              {isLoggedIn && (
+                <>
+                  <NavDropdown.Item as={Link} to="/pelaporanlokasi">
+                    Form Pelaporan Lokasi
+                  </NavDropdown.Item>
+                </>
+              )}
             </NavDropdown>
             <Nav.Link as={Link} to="/aboutUs">
               About Us

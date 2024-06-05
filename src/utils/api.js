@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const forumAPI = axios.create({
-  baseURL: "https://isepwebtim.my.id",
+  baseURL: "https://api.ecorecycle.my.id/",
 });
 
 export const registerUser = async (username, email, password) => {
@@ -36,6 +36,15 @@ export const getOwnProfile = async (token) => {
         Authorization: `Bearer ${token}`,
       },
     });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const submitReport = async (formData) => {
+  try {
+    const response = await forumAPI.post("/report/newtpa", formData);
     return response.data;
   } catch (error) {
     throw error.response.data;

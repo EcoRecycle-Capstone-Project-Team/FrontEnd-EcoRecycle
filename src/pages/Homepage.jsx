@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import CardList from "../component/CardList";
 import imageData from "../data/imageData.json";
+import MapComponent from "../component/Maps";
 
 const StyledHeader = styled.h1`
   color: black;
@@ -108,12 +109,7 @@ export default function Homepage() {
             <h2 className="text-center">
               Sebaran Fasilitas Lokasi TPA & Bank Sampah yang Telah Terdaftar
             </h2>
-            <div
-              className="bg-light d-flex justify-content-center align-items-center"
-              style={{ minHeight: "calc(100vh - 160px)" }}
-            >
-              <h1>SECTION INI SEDANG UNDER DEVELOP</h1>
-            </div>
+            <MapComponent />
           </div>
         </div>
       </div>

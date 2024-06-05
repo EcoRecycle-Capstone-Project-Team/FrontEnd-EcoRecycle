@@ -8,6 +8,7 @@ import AboutUsPage from "./pages/AboutUs";
 import "./style/style.css";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import FormWithMap from "./component/FormMaps";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/aboutUs" element={<AboutUsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/pelaporanlokasi" element={<FormWithMap />} />
         </Routes>
       </main>
       <Footer />
