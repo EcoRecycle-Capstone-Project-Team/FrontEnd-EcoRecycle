@@ -50,3 +50,23 @@ export const submitReport = async (formData) => {
     throw error.response.data;
   }
 };
+
+export const fetchTpaLocations = async () => {
+  try {
+    const response = await forumAPI.get("/report/tpa");
+    const filteredData = response.data.data
+      .filter((tpa) => tpa.status === "verify")
+      .map((tpa) => ({
+        lat: parseFloat(tpa.latitude),
+        lng: parseFloat(tpa.longitude),
+        name: tpa.nama_lokasi,
+        status: "Operasional",
+        image: tpa.img_tpa
+          ? `https://api.ecorecycle.my.id/img/${tpa.img_tpa}`
+          : null,
+      }));
+    return filteredData;
+  } catch (error) {
+    throw error.response.data;
+  }
+};

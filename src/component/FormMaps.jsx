@@ -4,6 +4,7 @@ import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import { getOwnProfileAsync } from "../redux/authSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
+import { submitReportAsync } from "../redux/formPelaporan/action";
 
 const containerStyle = {
   width: "100%",
@@ -86,20 +87,7 @@ const FormWithMap = () => {
       formData.append(key, formValues[key]);
     });
 
-    fetch("https://api.ecorecycle.my.id/report/newtpa", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-        alert("Laporan berhasil dikirim!");
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Gagal mengirim laporan.");
-      });
+    dispatch(submitReportAsync(formData));
   };
 
   const getGeocode = (lat, lng) => {
@@ -323,9 +311,6 @@ const FormWithMap = () => {
                 </Form.Group>
               </Col>
             </Row>
-            {/* <Button variant="primary" type="submit" className="mt-3">
-              Submit
-            </Button> */}
             <motion.div
               whileHover={{ rotate: 4320 }}
               transition={{ duration: 6 }}

@@ -1,30 +1,30 @@
 import {
-  SUBMIT_REPORT_REQUEST,
-  SUBMIT_REPORT_SUCCESS,
-  SUBMIT_REPORT_FAILURE,
+  FETCH_TPA_LOCATIONS_REQUEST,
+  FETCH_TPA_LOCATIONS_SUCCESS,
+  FETCH_TPA_LOCATIONS_FAILURE,
 } from "./action";
 
 const initialState = {
   loading: false,
+  tpaLocations: [],
   error: null,
-  reportData: null,
 };
 
-const formPelaporanReducer = (state = initialState, action) => {
+const mapReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SUBMIT_REPORT_REQUEST:
+    case FETCH_TPA_LOCATIONS_REQUEST:
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case SUBMIT_REPORT_SUCCESS:
+    case FETCH_TPA_LOCATIONS_SUCCESS:
       return {
         ...state,
         loading: false,
-        reportData: action.payload,
+        tpaLocations: action.payload,
       };
-    case SUBMIT_REPORT_FAILURE:
+    case FETCH_TPA_LOCATIONS_FAILURE:
       return {
         ...state,
         loading: false,
@@ -35,4 +35,4 @@ const formPelaporanReducer = (state = initialState, action) => {
   }
 };
 
-export default formPelaporanReducer;
+export default mapReducer;
