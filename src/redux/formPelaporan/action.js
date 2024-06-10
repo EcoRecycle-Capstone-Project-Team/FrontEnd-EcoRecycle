@@ -21,10 +21,10 @@ export const submitReportFailure = (error) => ({
 });
 
 // Async Action
-export const submitReportAsync = (formData) => async (dispatch) => {
+export const submitReportAsync = (formData, reportType) => async (dispatch) => {
   dispatch(submitReportRequest());
   try {
-    const data = await submitReport(formData);
+    const data = await submitReport(formData, reportType);
     dispatch(submitReportSuccess(data));
     alert("Laporan berhasil dikirim!");
     window.location.reload();

@@ -2,22 +2,49 @@
   {
     "id": 1,
     "title": "5 Jenis Sampah yang dapat diolah dan dikembangkan",
+    "imageUrl": "https://via.placeholder.com/150",
     "date": "32 Februari 2023",
     "image": "./src/assets/article1.png",
-    "content": "Konten lengkap artikel pertama..."
+    "content": "Konten lengkap artikel pertama...",
+    "tag": "#tag1",
+    "desc": "",
+    "articleDetail": [
+      {
+        "imgDetail": "",
+        "desc": ""
+      }
+    ]
   },
   {
     "id": 2,
     "title": "5 Step Menjadi Peduli Terhadap Lingkungan",
+    "imageUrl": "https://via.placeholder.com/150",
     "date": "25 Maret 2022",
     "image": "./src/assets/article2.png",
-    "content": "Konten lengkap artikel kedua..."
+    "content": "Konten lengkap artikel kedua...",
+    "tag": "#tag2",
+    "desc": "",
+    "articleDetail": [
+      {
+        "imgDetail": "",
+        "desc": ""
+      }
+    ]
   },
   {
     "id": 3,
-    "title": "Tutorial Convert Dosa menjadi saldo Dana",
-    "date": "12 November 2023",
-    "image": "./src/assets/article3.png",
-    "content": "Konten lengkap artikel ketiga..."
+    "title": "5 Step Menjadi Peduli Terhadap Lingkungan",
+    "imageUrl": "https://via.placeholder.com/150",
+    "date": "25 Maret 2022",
+    "image": "./src/assets/article2.png",
+    "content": "Konten lengkap artikel kedua...",
+    "tag": "#tag3",
+    "desc": "",
+    "articleDetail": [
+      {
+        "imgDetail": "",
+        "desc": ""
+      }
+    ]
   }
 ]

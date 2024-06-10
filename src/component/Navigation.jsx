@@ -39,19 +39,25 @@ export default function Navigation() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Sebaran" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Lokasi TPA</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/sebaransampah">
+                Sebaran Sampah
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">
-                Lokasi Bank Sampah
+              <NavDropdown.Item as={Link} to="/sebaranlokasi">
+                Sebaran Lokasi
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/edukasi">
               Edukasi
             </Nav.Link>
             <NavDropdown title="Form Pelaporan" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
-                Form Pelaporan Sampah
-              </NavDropdown.Item>
+              {isLoggedIn && (
+                <>
+                  <NavDropdown.Item as={Link} to="/pelaporansampah">
+                    Form Pelaporan Sampah
+                  </NavDropdown.Item>
+                </>
+              )}
               {isLoggedIn && (
                 <>
                   <NavDropdown.Item as={Link} to="/pelaporanlokasi">

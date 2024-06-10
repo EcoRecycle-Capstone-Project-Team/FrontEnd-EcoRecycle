@@ -1,0 +1,10 @@
+.hover-image {
+  width: 100px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.hover-image:hover {
+  cursor: zoom-in;
+  filter: brightness(0.8);
+}

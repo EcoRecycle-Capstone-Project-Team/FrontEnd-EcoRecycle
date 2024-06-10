@@ -1,17 +1,31 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   GoogleMap,
   LoadScript,
   Marker,
-  InfoWindow,
+  InfoWindowF,
 } from "@react-google-maps/api";
 import { Container, Button, Card } from "react-bootstrap";
+import {
+  setTpaLocations,
+  setBankSampahLocations,
+  setSelectedLocation,
+  setUserLocation,
+  setShowNearest,
+} from "../redux/maps/action";
+import { fetchTpaLocations } from "../utils/api";
 
 const MapComponent = () => {
-  const [tpaLocations, setTpaLocations] = useState([]);
-  const [selectedLocation, setSelectedLocation] = useState(null);
-  const [userLocation, setUserLocation] = useState(null);
-  const [showNearest, setShowNearest] = useState(false);
+  const dispatch = useDispatch();
+  const {
+    tpaLocations,
+    bankSampahLocations,
+    selectedLocation,
+    userLocation,
+    showNearest,
+  } = useSelector((state) => state.maps);
+  const [mapLoaded, setMapLoaded] = useState(false);
 
   const mapContainerStyle = {
     width: "100%",
@@ -26,30 +40,32 @@ const MapComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://api.ecorecycle.my.id/report/tpa");
-        const data = await response.json();
-        const filteredData = data.data
-          .filter((tpa) => tpa.status === "verify")
-          .map((tpa) => ({
-            lat: parseFloat(tpa.latitude),
-            lng: parseFloat(tpa.longitude),
-            name: tpa.nama_lokasi,
-            status: "Operasional",
-            image: tpa.img_tpa
-              ? `https://api.ecorecycle.my.id/img/${tpa.img_tpa}`
-              : null,
-          }));
-        setTpaLocations(filteredData);
+        const data = await fetchTpaLocations();
+        const tpaData = [];
+        const bankSampahData = [];
+
+        data.forEach((location) => {
+          if (location.status === "Operasional") {
+            if (location.jenis_lokasi === "TPA") {
+              tpaData.push(location);
+            } else if (location.jenis_lokasi === "Bank Sampah") {
+              bankSampahData.push(location);
+            }
+          }
+        });
+
+        dispatch(setTpaLocations(tpaData));
+        dispatch(setBankSampahLocations(bankSampahData));
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   const handleMarkerClick = (location) => {
-    setSelectedLocation(location);
+    dispatch(setSelectedLocation(location));
   };
 
   const findNearestTpa = () => {
@@ -68,11 +84,11 @@ const MapComponent = () => {
       .sort((a, b) => a.distance - b.distance);
   };
 
-  const calculateDistance = (lat1, lng1, lat2, lng2) => {
+  const calculateDistance = (lat1, lng1, lat2) => {
     const toRad = (value) => (value * Math.PI) / 180;
     const R = 6371; // Radius of the Earth in km
     const dLat = toRad(lat2 - lat1);
-    const dLng = toRad(lng2 - lng1);
+    const dLng = toRad(lat2 - lng1);
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(toRad(lat1)) *
@@ -86,71 +102,146 @@ const MapComponent = () => {
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        setUserLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
+        dispatch(
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          })
+        );
       });
     }
-  }, []);
+  }, [dispatch]);
 
   const nearestTpa = findNearestTpa();
+
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
     <Container className="py-5">
       <Card>
         <Card.Body>
-          <LoadScript googleMapsApiKey="AIzaSyD6i6_yN1sttL0vPFRfz3kCiJcvQJ6mQe0">
-            <GoogleMap
-              mapContainerStyle={mapContainerStyle}
-              center={defaultCenter}
-              zoom={5}
-            >
-              {userLocation && (
-                <Marker
-                  position={userLocation}
-                  icon="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-                />
-              )}
-              {tpaLocations.map((location, index) => (
-                <Marker
-                  key={index}
-                  position={{ lat: location.lat, lng: location.lng }}
-                  icon="http://maps.google.com/mapfiles/ms/icons/green-dot.png"
-                  onClick={() => handleMarkerClick(location)}
-                />
-              ))}
-              {selectedLocation && (
-                <InfoWindow
-                  position={{
-                    lat: selectedLocation.lat,
-                    lng: selectedLocation.lng,
-                  }}
-                  onCloseClick={() => setSelectedLocation(null)}
-                >
-                  <div style={{ width: "200px" }}>
-                    {selectedLocation.image && (
-                      <img
-                        src={selectedLocation.image}
-                        alt={selectedLocation.name}
-                        style={{ width: "100%", height: "auto" }}
-                      />
-                    )}
-                    <h3>{selectedLocation.name}</h3>
-                    <p>Status: {selectedLocation.status}</p>
-                    {selectedLocation.distance !== undefined && (
-                      <p>Distance: {selectedLocation.distance.toFixed(2)} km</p>
-                    )}
-                  </div>
-                </InfoWindow>
-              )}
-            </GoogleMap>
+          <LoadScript
+            googleMapsApiKey={apiKey}
+            onLoad={() => setMapLoaded(true)}
+          >
+            {mapLoaded && (
+              <GoogleMap
+                mapContainerStyle={mapContainerStyle}
+                center={defaultCenter}
+                zoom={5}
+              >
+                {userLocation && (
+                  <Marker
+                    position={userLocation}
+                    icon="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                  />
+                )}
+                {tpaLocations.map((location, index) => (
+                  <Marker
+                    key={index}
+                    position={{ lat: location.lat, lng: location.lng }}
+                    icon="http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                    onClick={() => handleMarkerClick(location)}
+                  />
+                ))}
+                {bankSampahLocations.map((location, index) => (
+                  <Marker
+                    key={index}
+                    position={{ lat: location.lat, lng: location.lng }}
+                    icon="http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                    onClick={() => handleMarkerClick(location)}
+                  />
+                ))}
+                {selectedLocation && (
+                  <InfoWindowF
+                    position={{
+                      lat: selectedLocation.lat,
+                      lng: selectedLocation.lng,
+                    }}
+                    onCloseClick={() => dispatch(setSelectedLocation(null))}
+                  >
+                    <div
+                      style={{
+                        width: "250px",
+                        padding: "10px",
+                        fontFamily: "Arial, sans-serif",
+                      }}
+                    >
+                      {selectedLocation.image && (
+                        <img
+                          src={selectedLocation.image}
+                          alt={selectedLocation.name}
+                          style={{ width: "100%", height: "auto" }}
+                        />
+                      )}
+                      <h3>{selectedLocation.name}</h3>
+                      <p>Status: {selectedLocation.status}</p>
+                      {selectedLocation.distance !== undefined && (
+                        <p>
+                          Distance: {selectedLocation.distance.toFixed(2)} km
+                        </p>
+                      )}
+                      <p style={{ margin: "5px 0" }}>
+                        <strong>Pelapor:</strong>{" "}
+                        {selectedLocation.nama_pelapor}
+                      </p>
+                      <p style={{ margin: "5px 0" }}>
+                        <strong>Alamat:</strong> {selectedLocation.alamat}
+                      </p>
+                      <p style={{ margin: "5px 0" }}>
+                        <strong>Kota:</strong> {selectedLocation.kota}
+                      </p>
+                      <p style={{ margin: "5px 0" }}>
+                        <strong>Kode Pos:</strong> {selectedLocation.kode_pos}
+                      </p>
+                      <p style={{ margin: "5px 0" }}>
+                        <strong>Provinsi:</strong> {selectedLocation.provinsi}
+                      </p>
+                      <p
+                        style={{
+                          margin: "5px 0",
+                          fontSize: "12px",
+                          color: "gray",
+                        }}
+                      >
+                        <strong>Dibuat:</strong>{" "}
+                        {new Date(selectedLocation.created_at).toLocaleString()}
+                      </p>
+                    </div>
+                  </InfoWindowF>
+                )}
+              </GoogleMap>
+            )}
           </LoadScript>
+          <div className="mt-4">
+            <h5>Legend:</h5>
+            <div>
+              <img
+                src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                alt="User Location"
+              />{" "}
+              Lokasi Anda Sekarang
+            </div>
+            <div>
+              <img
+                src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                alt="TPA Location"
+              />{" "}
+              Lokasi TPA Terdaftar
+            </div>
+            <div>
+              <img
+                src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                alt="Bank Sampah Location"
+              />{" "}
+              Lokasi Bank Sampah Terdaftar
+            </div>
+          </div>
           {userLocation && (
             <div className="text-center mt-4">
               <Button
                 variant="success"
-                onClick={() => setShowNearest((prev) => !prev)}
+                onClick={() => dispatch(setShowNearest(!showNearest))}
               >
                 {showNearest ? "Hide Nearest TPAs" : "Show Nearest TPAs"}
               </Button>
