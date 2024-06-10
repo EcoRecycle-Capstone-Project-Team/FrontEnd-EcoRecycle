@@ -132,6 +132,8 @@ const FormWithMap = () => {
     });
   };
 
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+
   return (
     <PageTransitionWrapper>
       <Container className="py-5">
@@ -144,7 +146,7 @@ const FormWithMap = () => {
             Form Pelaporan Lokasi
           </Card.Header>
           <Card.Body>
-            <LoadScript googleMapsApiKey="-">
+            <LoadScript googleMapsApiKey={apiKey}>
               <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}

@@ -123,6 +123,8 @@ export default function FormPelaporanSampah() {
     });
   };
 
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+
   return (
     <PageTransitionWrapper>
       <Container className="py-5">
@@ -135,7 +137,7 @@ export default function FormPelaporanSampah() {
             Form Pelaporan Sampah
           </Card.Header>
           <Card.Body>
-            <LoadScript googleMapsApiKey="-">
+            <LoadScript googleMapsApiKey={apiKey}>
               <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
