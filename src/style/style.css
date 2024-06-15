@@ -344,3 +344,7 @@ body {
 }
 
 /* ---------- */
+
+.navbar .dropdown-toggle::after {
+  color: #fff;
+}
