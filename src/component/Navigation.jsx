@@ -25,20 +25,24 @@ export default function Navigation() {
   };
 
   return (
-    <Navbar className="bg-white" collapseOnSelect expand="lg">
+    <Navbar style={{ background: "#157347" }} collapseOnSelect expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/" style={{ color: "#fff" }}>
           <img
-            src="src/assets/MainLogo.png"
+            src="/assets/MainLogo.png"
             width="136"
             height="70"
             className="d-inline-block align-top"
+            alt="Main Logo"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Sebaran" id="collapsible-nav-dropdown">
+            <NavDropdown
+              title={<span style={{ color: "#fff" }}>Sebaran</span>}
+              id="collapsible-nav-dropdown"
+            >
               <NavDropdown.Item as={Link} to="/sebaransampah">
                 Sebaran Sampah
               </NavDropdown.Item>
@@ -47,34 +51,41 @@ export default function Navigation() {
                 Sebaran Lokasi
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/edukasi">
+            <Nav.Link as={Link} to="/edukasi" style={{ color: "#fff" }}>
               Edukasi
             </Nav.Link>
-            <NavDropdown title="Form Pelaporan" id="collapsible-nav-dropdown">
-              {isLoggedIn && (
-                <>
-                  <NavDropdown.Item as={Link} to="/pelaporansampah">
-                    Form Pelaporan Sampah
-                  </NavDropdown.Item>
-                </>
-              )}
-              {isLoggedIn && (
-                <>
-                  <NavDropdown.Item as={Link} to="/pelaporanlokasi">
-                    Form Pelaporan Lokasi
-                  </NavDropdown.Item>
-                </>
-              )}
-            </NavDropdown>
-            <Nav.Link as={Link} to="/aboutUs">
+            {isLoggedIn && (
+              <NavDropdown
+                title={<span style={{ color: "#fff" }}>Form Pelaporan</span>}
+                id="collapsible-nav-dropdown"
+              >
+                <NavDropdown.Item as={Link} to="/pelaporansampah">
+                  Form Pelaporan Sampah
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/pelaporanlokasi">
+                  Form Pelaporan Lokasi
+                </NavDropdown.Item>
+              </NavDropdown>
+            )}
+            <Nav.Link as={Link} to="/aboutUs" style={{ color: "#fff" }}>
               About Us
             </Nav.Link>
+            {isLoggedIn && (
+              <Nav.Link as={Link} to="/dashboard" style={{ color: "#fff" }}>
+                Dashboard
+              </Nav.Link>
+            )}
           </Nav>
           <Nav>
             {isLoggedIn && userProfile && (
               <NavDropdown
-                title={`Halo, ${userProfile.name}`}
+                title={
+                  <span style={{ color: "#fff" }}>
+                    Halo, {userProfile.name}
+                  </span>
+                }
                 id="basic-nav-dropdown"
+                style={{ color: "#fff" }}
               >
                 <NavDropdown.Item onClick={handleLogout}>
                   Logout
@@ -83,7 +94,7 @@ export default function Navigation() {
             )}
             {!isLoggedIn && (
               <>
-                <Nav.Link as={Link} to="/login">
+                <Nav.Link as={Link} to="/login" style={{ color: "#fff" }}>
                   Login
                 </Nav.Link>
                 <Nav.Link className="get-started" eventKey={2} href="#">

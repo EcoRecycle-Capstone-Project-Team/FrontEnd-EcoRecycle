@@ -103,3 +103,216 @@ export const fetchSampahLocations = async () => {
     throw error.response.data;
   }
 };
+
+export const updateStatusPelaporan = async (id, status) => {
+  try {
+    const response = await forumAPI.patch(`/report/tpa/${id}/status`, {
+      status,
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getAllPelaporan = async () => {
+  try {
+    const response = await forumAPI.get("/report/tpa");
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const updateStatusPelaporanSampah = async (id, status) => {
+  try {
+    const response = await forumAPI.patch(`/report/sampah/${id}/status`, {
+      status,
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getAllPelaporanSampah = async () => {
+  try {
+    const response = await forumAPI.get("/report/sampah");
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getTotalReports = async (token) => {
+  try {
+    const response = await forumAPI.get("/total-reports", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getTotalCompletedReports = async (token) => {
+  try {
+    const response = await forumAPI.get("/total-completed-reports", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getTotalUsers = async (token) => {
+  try {
+    const response = await forumAPI.get("/total-users", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getDashboardStats = async (token) => {
+  try {
+    const response = await forumAPI.get("/dashboard-stats", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const updatePelaporan = async (id, updateData) => {
+  try {
+    const response = await forumAPI.put(`/report/tpa/${id}`, updateData);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const deletePelaporan = async (id) => {
+  try {
+    const response = await forumAPI.delete(`/report/tpa/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getPelaporanById = async (id, token) => {
+  try {
+    const response = await forumAPI.get(`/report/tpa/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const updateSampahReport = async (id, updateData) => {
+  try {
+    const response = await forumAPI.put(`/report/sampah/${id}`, updateData);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const deleteSampahReport = async (id) => {
+  try {
+    const response = await forumAPI.delete(`/report/sampah/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getSampahReportById = async (id, token) => {
+  try {
+    const response = await forumAPI.get(`/report/sampah/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getUserReports = async (id) => {
+  try {
+    const response = await forumAPI.get(`/report/sampah/user/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const deleteUserReportById = async (id) => {
+  try {
+    const response = await forumAPI.delete(`/report/sampah/user/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const getUserReportsTPA = async (id) => {
+  try {
+    const response = await forumAPI.get(`/report/tpa/user/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const deleteUserPelaporanById = async (id) => {
+  try {
+    const response = await forumAPI.delete(`/report/tpa/user/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const updateUserProfile = async (id, profileData, token) => {
+  try {
+    const formData = new FormData();
+    for (const key in profileData) {
+      formData.append(key, profileData[key]);
+    }
+
+    const response = await forumAPI.put(
+      `/users/update-profile/${id}`,
+      formData,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};

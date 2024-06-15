@@ -1,0 +1,125 @@
+.sidebar {
+    position: fixed;
+    top: 17px;
+
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    z-index: 1000;
+    padding: 48px 0 0;
+
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+
+    background-color: #f8f9fa;
+}
+
+
+.sidebar-header {
+    background: #343a40;
+    color: white;
+    text-align: center;
+}
+
+
+.sidebar .nav-link {
+    font-size: 1rem;
+    color: #343a40;
+    padding: 15px 20px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff;
+    background-color: #e9ecef;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+.sidebar .nav-item:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar-heading {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card .card-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.badge {
+    font-size: 1rem;
+}
+
+
+.navbar-custom {
+    padding: 0.6rem 1rem;
+    background-color: #343a40;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-custom .nav-link {
+    color: #ffffff;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #007bff;
+}
+
+.navbar-custom .nav-item .dropdown-menu {
+    background-color: #343a40;
+    border: none;
+}
+
+.navbar-custom .nav-item .dropdown-item {
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-custom .nav-item .dropdown-item:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.navbar-custom .nav-item .dropdown-divider {
+    border-top: 1px solid #444;
+}

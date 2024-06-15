@@ -1,0 +1,199 @@
+.main {
+    display: flex;
+    margin: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.sidebarUser {
+    width: 30%;
+    border-radius: 10px;
+    margin-right: 25px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card img {
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    color: #676767;
+}
+
+.profile-options {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-options ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-options ul li {
+    margin-bottom: 10px;
+}
+
+.profile-options ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-options ul li a i {
+    margin-right: 10px;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.profile-options ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+.profile-options ul li a.active {
+    background-color: #157347;
+    color: #ffffff;
+}
+
+.profile-options ul li a.active i {
+    color: #ffffff;
+}
+
+.profile-options ul hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 10px 0;
+}
+
+.content {
+    width: 75%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-header h3 {
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+.content-divider {
+    border: 0;
+    border-top: 1px solid #5e5e5e;
+    margin: 20px 0;
+}
+
+.edit-options ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.edit-options ul li {
+    width: 48%;
+    margin-bottom: 10px;
+    margin-right: 2%;
+}
+
+.edit-options ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.edit-options ul li a i {
+    margin-right: 10px;
+    color: #666;
+}
+
+.edit-options ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+.edit-options ul li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.jumbotron {
+    background-color: #e8faf2;
+    padding: 20px;
+    border-radius: 10px;
+    border: #157347 1px solid;
+    text-align: center;
+}
+
+.jumbotron h4 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #2d2d2d;
+}
+
+.jumbotron p {
+    margin: 0;
+    color: #2d2d2d;
+    font-size: 16px;
+}
+
+.icon {
+    font-size: 48px;
+    color: #157347;
+    margin-bottom: 15px;
+}
+
+.no-report-illustration {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.no-report-illustration img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.no-report-illustration p {
+    color: #777;
+    font-size: 18px;
+}
+
+.report-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
