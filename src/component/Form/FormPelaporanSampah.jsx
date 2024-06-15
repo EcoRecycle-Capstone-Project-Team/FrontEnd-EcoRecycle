@@ -2,7 +2,6 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { useState, useCallback, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { motion } from "framer-motion";
 import { getOwnProfileAsync } from "../../redux/authSlice";
 import { submitReportAsync } from "../../redux/formPelaporan/action";
 import PageTransitionWrapper from "../Animations/PageTransitionWrapper";
@@ -303,15 +302,9 @@ export default function FormPelaporanSampah() {
                   </Form.Group>
                 </Col>
               </Row>
-              <motion.div
-                whileHover={{ rotate: 4320 }}
-                transition={{ duration: 6 }}
-                className="d-inline-block"
-              >
-                <Button variant="success" type="submit" className="mt-3">
-                  Submit
-                </Button>
-              </motion.div>
+              <Button variant="success" type="submit" className="mt-3">
+                Submit
+              </Button>
             </Form>
           </Card.Body>
         </Card>

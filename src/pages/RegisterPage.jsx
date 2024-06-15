@@ -29,7 +29,7 @@ export default function RegisterPage() {
         <main className="d-flex flex-column align-items-center justify-content-center mb-3">
           <div className="text-center mb-4">
             <img
-              src="/src/assets/MainLogo.png"
+              src="/assets/MainLogo.png"
               alt="Eco Friendly Activities"
               className="img-fluid mw-100"
               style={{ width: "200px", height: "auto" }}

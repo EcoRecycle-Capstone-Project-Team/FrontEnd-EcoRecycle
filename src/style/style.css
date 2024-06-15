@@ -16,6 +16,10 @@ body {
   }
 }
 
+.sebaran-lokasi {
+  margin-top: 30px;
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.5s ease-in-out forwards;
 }

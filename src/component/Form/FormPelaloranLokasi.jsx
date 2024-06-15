@@ -3,7 +3,6 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import { getOwnProfileAsync } from "../../redux/authSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { motion } from "framer-motion";
 import { submitReportAsync } from "../../redux/formPelaporan/action";
 import PageTransitionWrapper from "../Animations/PageTransitionWrapper";
 
@@ -326,15 +325,9 @@ const FormWithMap = () => {
                   </Form.Group>
                 </Col>
               </Row>
-              <motion.div
-                whileHover={{ rotate: 4320 }}
-                transition={{ duration: 6 }}
-                className="d-inline-block"
-              >
                 <Button variant="success" type="submit" className="mt-3">
                   Submit
                 </Button>
-              </motion.div>
             </Form>
           </Card.Body>
         </Card>

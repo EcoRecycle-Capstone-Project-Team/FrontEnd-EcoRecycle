@@ -35,7 +35,7 @@ export default function SebaranSampahPage() {
           <HeroSection
             title="Sebaran Lokasi Sampah Yang Berhasil Terselesaikan"
             subtitle="Lihat perkembangan dan partisipasi masyarakat dalam menjaga kebersihan lingkungan."
-            imageUrl="/src/assets/background-sampah.jpg"
+            imageUrl="/assets/background-sampah.jpg"
           />
         </div>
         <motion.div

@@ -1,0 +1,20 @@
+[
+  {
+    "imgSrc": "/assets/WasteEducation.png",
+    "imgAlt": "Waste Education",
+    "title": "Waste Education",
+    "description": "Edukasi tentang pengelolaan sampah untuk meningkatkan kesadaran dan pemahaman masyarakat"
+  },
+  {
+    "imgSrc": "/assets/WasteReporting.png",
+    "imgAlt": "Waste Reporting",
+    "title": "Waste Reporting",
+    "description": "Sistem pelaporan sampah yang mudah dan cepat untuk membantu menjaga kebersihan lingkungan Anda."
+  },
+  {
+    "imgSrc": "/assets/WasteIntegration.png",
+    "imgAlt": "Waste Integration",
+    "title": "Waste Integration",
+    "description": "Integrasi pengelolaan sampah di komunitas untuk menciptakan lingkungan yang lebih bersih dan sehat."
+  }
+]

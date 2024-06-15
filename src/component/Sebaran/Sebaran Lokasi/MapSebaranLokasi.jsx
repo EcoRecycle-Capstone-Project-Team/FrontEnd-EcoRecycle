@@ -185,17 +185,17 @@ const MapSebaranLokasi = () => {
           style={{ display: "flex", alignItems: "center", marginBottom: "5px" }}
         >
           <img
-            src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+            src="/assets/icon-tpamarker.png"
             alt="TPA Location"
-            style={{ marginRight: "8px" }}
+            style={{ marginRight: "8px", width: "20px" }}
           />
           Lokasi TPA Terdaftar
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <img
-            src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+            src="/assets/icon-banksampahmarker.png"
             alt="Bank Sampah Location"
-            style={{ marginRight: "8px" }}
+            style={{ marginRight: "8px", width: "20px" }}
           />
           Lokasi Bank Sampah Terdaftar
         </div>
@@ -203,11 +203,20 @@ const MapSebaranLokasi = () => {
     );
   };
 
+  const customIcon = (url, size) => ({
+    url: url,
+    scaledSize: new window.google.maps.Size(size.width, size.height),
+  });
+
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
     <Container>
-      <LoadScript googleMapsApiKey={apiKey} onLoad={() => setMapLoaded(true)}>
+      <LoadScript
+        googleMapsApiKey={apiKey}
+        loading="async"
+        onLoad={() => setMapLoaded(true)}
+      >
         {mapLoaded && (
           <GoogleMap
             mapContainerStyle={mapContainerStyle}
@@ -225,7 +234,10 @@ const MapSebaranLokasi = () => {
               <Marker
                 key={index}
                 position={{ lat: location.lat, lng: location.lng }}
-                icon="http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                icon={customIcon("/assets/icon-tpamarker.png", {
+                  width: 25,
+                  height: 36,
+                })}
                 onClick={() => handleMarkerClick(location)}
               />
             ))}
@@ -233,7 +245,10 @@ const MapSebaranLokasi = () => {
               <Marker
                 key={index}
                 position={{ lat: location.lat, lng: location.lng }}
-                icon="http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                icon={customIcon("/assets/icon-banksampahmarker.png", {
+                  width: 25,
+                  height: 36,
+                })}
                 onClick={() => handleMarkerClick(location)}
               />
             ))}

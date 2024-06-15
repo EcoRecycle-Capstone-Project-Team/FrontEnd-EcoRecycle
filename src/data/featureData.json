@@ -1,0 +1,37 @@
+[
+  {
+    "imgSrc": "/assets/WasteEducation.png",
+    "imgAlt": "Education",
+    "title": "Edukasi",
+    "description": "Tingkatkan pemahaman dan kesadaran tentang pengelolaan sampah melalui program edukasi kami.",
+    "link": "/edukasi"
+  },
+  {
+    "imgSrc": "assets/WasteReporting.png",
+    "imgAlt": "Sebaran Sampah",
+    "title": "Sebaran Sampah",
+    "description": "Lihat dan laporkan sebaran sampah di sekitar Anda dengan cepat dan mudah.",
+    "link": "/sebaransampah"
+  },
+  {
+    "imgSrc": "/assets/WasteIntegration.png",
+    "imgAlt": "Sebaran Lokasi",
+    "title": "Sebaran Lokasi",
+    "description": "Temukan dan integrasikan lokasi pengelolaan sampah di komunitas Anda",
+    "link": "/sebaranlokasi"
+  },
+  {
+    "imgSrc": "/assets/WasteIntegration.png",
+    "imgAlt": "Pelaporan Sampah",
+    "title": "Pelaporan Sampah",
+    "description": "Laporkan masalah sampah di lingkungan Anda untuk penanganan yang lebih baik.",
+    "link": "/pelaporansampah"
+  },
+  {
+    "imgSrc": "/assets/WasteIntegration.png",
+    "imgAlt": "Pelaporan Lokasi",
+    "title": "Pelaporan Lokasi",
+    "description": "Sampaikan lokasi yang membutuhkan penanganan sampah secara langsung.",
+    "link": "/pelaporanlokasi"
+  }
+]

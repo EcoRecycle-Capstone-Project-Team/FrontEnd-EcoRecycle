@@ -18,7 +18,7 @@ export default function AboutUsPage() {
               <h2 className="header-subtitle">Capstone Team</h2>
             </div>
             <img
-              src="./src/assets/Recycle.png"
+              src="./assets/Recycle.png"
               alt="EcoRecycle Logo"
               className="header-logo"
             />

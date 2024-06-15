@@ -9,27 +9,29 @@ export default function SebaranLokasiPage() {
   return (
     <>
       <Navigation />
-      <Container>
-        <div className="mb-4">
-          <h2 className="text-center mb-4">
-            Sebaran Lokasi TPA & Bank Sampah di Indonesia
-          </h2>
-          <HeroSection
-            title="Sebaran Lokasi Sampah Yang Berhasil Terselesaikan"
-            subtitle="Lihat perkembangan dan partisipasi masyarakat dalam menjaga kebersihan lingkungan."
-            imageUrl="/src/assets/Bali-Indonesia.jpg"
-          />
-        </div>
-        <Row>
-          <MapSebaranLokasi />
-        </Row>
-        <Row>
-          <DoughnutLokasi />
-        </Row>
-        <Row>
-          <TabelLokasi />
-        </Row>
-      </Container>
+      <div className="sebaran-lokasi">
+        <Container>
+          <div className="mb-4">
+            <h2 className="text-center mb-4">
+              Sebaran Lokasi TPA & Bank Sampah di Indonesia
+            </h2>
+            <HeroSection
+              title="Sebaran Lokasi Sampah Yang Berhasil Terselesaikan"
+              subtitle="Lihat perkembangan dan partisipasi masyarakat dalam menjaga kebersihan lingkungan."
+              imageUrl="/assets/Bali-Indonesia.jpg"
+            />
+          </div>
+          <Row>
+            <MapSebaranLokasi />
+          </Row>
+          <Row>
+            <DoughnutLokasi />
+          </Row>
+          <Row>
+            <TabelLokasi />
+          </Row>
+        </Container>
+      </div>
     </>
   );
 }

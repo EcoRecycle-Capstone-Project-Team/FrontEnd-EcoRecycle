@@ -9,7 +9,7 @@ export default function Footer() {
           <Col md={4} className="mb-3 mb-md-0">
             <div className="d-flex align-items-center mb-2">
               <img
-                src="src/assets/Logo without title.png"
+                src="/assets/Logo without title.png"
                 width="57"
                 height="50"
                 alt="Logo"

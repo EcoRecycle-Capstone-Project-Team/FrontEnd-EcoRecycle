@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "eventKey": 0,
+    "title": "Apakah layanan EcoRecycle berlangganan?",
+    "desc": "Tidak, layanan EcoRecycle gratis dan terbuka untuk semua orang. Anda dapat mengakses semua fitur tanpa biaya berlangganan."
+  },
+  {
+    "id": 2,
+    "eventKey": 1,
+    "title": "Bagaimana cara melaporkan masalah sampah?",
+    "desc": "Anda dapat melaporkan masalah sampah melalui fitur 'Pelaporan Sampah' di website kami. Cukup isi formulir dengan detail lokasi dan jenis sampah yang ditemukan."
+  },
+  {
+    "id": 3,
+    "eventKey": 2,
+    "title": "Apakah data saya aman?",
+    "desc": "Ya, kami menjaga privasi dan keamanan data Anda dengan menggunakan enkripsi dan standar keamanan terbaru."
+  },
+  {
+    "id": 4,
+    "eventKey": 3,
+    "title": "Bagaimana cara bergabung dengan komunitas EcoRecycle?",
+    "desc": "Anda dapat bergabung dengan komunitas kami melalui fitur 'Sebaran Lokasi' dan menemukan grup diskusi atau acara yang diadakan di dekat Anda."
+  },
+  {
+    "id": 5,
+    "eventKey": 4,
+    "title": "Apakah ada program edukasi tentang pengelolaan sampah?",
+    "desc": "Ya, kami menawarkan program edukasi yang disebut 'Waste Education' untuk meningkatkan kesadaran dan pengetahuan tentang pengelolaan sampah."
+  },
+  {
+    "id": 6,
+    "eventKey": 5,
+    "title": "Bagaimana cara melihat sebaran lokasi TPA dan bank sampah?",
+    "desc": "Anda dapat menggunakan fitur 'Sebaran Lokasi' di website kami untuk melihat peta yang menunjukkan lokasi TPA dan bank sampah di sekitar Anda."
+  },
+  {
+    "id": 7,
+    "eventKey": 6,
+    "title": "Apakah saya bisa mengintegrasikan pengelolaan sampah di komunitas saya dengan EcoRecycle?",
+    "desc": "Tentu, kami menyediakan fitur 'Waste Integration' yang memungkinkan Anda untuk mengintegrasikan sistem pengelolaan sampah di komunitas Anda dengan platform kami."
+  }
+]
