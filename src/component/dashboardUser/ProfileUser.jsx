@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateUserProfileAsync } from "../../redux/authSlice";
 import { Button, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
+import Loading from "../loading/Loading";
 
 function ProfileUser() {
   const dispatch = useDispatch();
   const userProfile = useSelector((state) => state.auth.userProfile);
+  const isLoading = useSelector((state) => state.auth.isLoading);
+  const error = useSelector((state) => state.auth.error);
 
   const [profile, setProfile] = useState({
     username: "",
@@ -69,6 +72,14 @@ function ProfileUser() {
         });
       });
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
+  }
 
   return (
     <>

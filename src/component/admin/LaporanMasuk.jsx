@@ -1,6 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Table, Card, Badge, Dropdown, Button } from "react-bootstrap";
+import {
+  Table,
+  Card,
+  Badge,
+  Dropdown,
+  Button,
+  Pagination,
+  Form,
+} from "react-bootstrap";
 import {
   handleAccSampah,
   handleRejectSampah,
@@ -11,11 +19,18 @@ import {
 } from "../../redux/authSlice";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import Loading from "../loading/Loading";
 
 const LaporanMasuk = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const pelaporanSampah = useSelector((state) => state.auth.pelaporanSampah);
+  const isLoading = useSelector((state) => state.auth.isLoading);
+  const error = useSelector((state) => state.auth.error);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [reportsPerPage, setReportsPerPage] = useState(10);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     dispatch(getAllPelaporanAsync());
@@ -107,6 +122,36 @@ const LaporanMasuk = () => {
     );
   };
 
+  const indexOfLastReport = currentPage * reportsPerPage;
+  const indexOfFirstReport = indexOfLastReport - reportsPerPage;
+  const filteredReports = pelaporanSampah.filter((report) =>
+    report.nama_pelapor.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const currentReports = filteredReports.slice(
+    indexOfFirstReport,
+    indexOfLastReport
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handlePerPageChange = (event) => {
+    setReportsPerPage(parseInt(event.target.value));
+    setCurrentPage(1);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1);
+  };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
+  }
+
   return (
     <main
       role="main"
@@ -118,7 +163,36 @@ const LaporanMasuk = () => {
 
       <Card>
         <Card.Header>Tabel Data Laporan Masalah Sampah</Card.Header>
-        <Card.Body style={{ marginTop: "-1rem" }}>
+        <Card.Body>
+          <div className="d-flex justify-content-between mb-3">
+            <Form>
+              <Form.Group controlId="searchForm">
+                <Form.Label className="mr-2">Search:</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Cari nama pelapor..."
+                  value={searchTerm}
+                  onChange={handleSearchChange}
+                />
+              </Form.Group>
+            </Form>
+            <Form>
+              <Form.Group controlId="perPageForm">
+                <Form.Label className="mr-2">Entri per Halaman:</Form.Label>
+                <Form.Control
+                  as="select"
+                  value={reportsPerPage}
+                  onChange={handlePerPageChange}
+                >
+                  <option value={10}>10</option>
+                  <option value={20}>20</option>
+                  <option value={30}>30</option>
+                  <option value={50}>50</option>
+                </Form.Control>
+              </Form.Group>
+            </Form>
+          </div>
+
           <div className="table-responsive">
             <Table striped bordered hover>
               <thead>
@@ -133,9 +207,11 @@ const LaporanMasuk = () => {
                 </tr>
               </thead>
               <tbody>
-                {pelaporanSampah.map((row, index) => (
+                {currentReports.map((row, index) => (
                   <tr key={index}>
-                    <td style={{ textAlign: "center" }}>{index + 1}</td>
+                    <td style={{ textAlign: "center" }}>
+                      {indexOfFirstReport + index + 1}
+                    </td>
                     <td>{row.nama_pelapor}</td>
                     <td>{formatDate(row.created_at)}</td>
                     <td>{singkatkanDeskripsi(row.deskripsi, 4)}</td>
@@ -149,7 +225,6 @@ const LaporanMasuk = () => {
                         <Dropdown.Toggle className="btn-sm">
                           Aksi
                         </Dropdown.Toggle>
-
                         <Dropdown.Menu>
                           <Dropdown.Item
                             onClick={() => handleAccSampahClick(row.id)}
@@ -196,6 +271,23 @@ const LaporanMasuk = () => {
                 ))}
               </tbody>
             </Table>
+          </div>
+
+          <div className="d-flex justify-content-center">
+            <Pagination>
+              {Array.from(
+                { length: Math.ceil(filteredReports.length / reportsPerPage) },
+                (_, i) => (
+                  <Pagination.Item
+                    key={i + 1}
+                    active={i + 1 === currentPage}
+                    onClick={() => paginate(i + 1)}
+                  >
+                    {i + 1}
+                  </Pagination.Item>
+                )
+              )}
+            </Pagination>
           </div>
         </Card.Body>
       </Card>

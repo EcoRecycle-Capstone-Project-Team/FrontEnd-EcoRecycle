@@ -2,10 +2,11 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserReportsAsync } from "../../redux/authSlice";
 import { Badge, Card, Row, Col, Container, Alert } from "react-bootstrap";
+import Loading from "../loading/Loading";
 
 function LacakStatusUser() {
   const dispatch = useDispatch();
-  const { userReports, isLoading } = useSelector((state) => state.auth);
+  const { userReports, isLoading, error } = useSelector((state) => state.auth);
   const userId = useSelector((state) => state.auth.userProfile?.id);
 
   useEffect(() => {
@@ -79,6 +80,14 @@ function LacakStatusUser() {
       (deskripsi.split(" ").length > jumlahKata ? "..." : "")
     );
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
+  }
 
   return (
     <>

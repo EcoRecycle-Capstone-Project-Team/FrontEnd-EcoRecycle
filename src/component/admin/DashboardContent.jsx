@@ -6,10 +6,14 @@ import {
   getAllPelaporanSampahAsync,
 } from "../../redux/authSlice";
 import "./styles.css";
+import Loading from "../loading/Loading";
 
 const DashboardContent = () => {
   const dispatch = useDispatch();
   const token = localStorage.getItem("token");
+  const isLoading = useSelector((state) => state.auth.isLoading);
+  const error = useSelector((state) => state.auth.error);
+
   let reportNumber = 0;
 
   const { dashboardStats = {}, pelaporanSampah } = useSelector(
@@ -42,6 +46,14 @@ const DashboardContent = () => {
         return "success";
     }
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
+  }
 
   return (
     <main

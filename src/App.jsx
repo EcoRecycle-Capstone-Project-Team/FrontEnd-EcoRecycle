@@ -35,6 +35,7 @@ import { AnimatePresence } from "framer-motion";
 import ForbiddenPage from "./component/error/ForbiddenPage";
 import NotFoundPage from "./component/error/NotFoundPage";
 import LacakStatusLapUserPage from "./pages/dashboardUser/LacakLaporan";
+import AllUserPage from "./pages/admin/AllUSerPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -162,6 +163,8 @@ function App() {
                       path="/admin/laporan-tpa/update/:id"
                       element={<UpdateTpaPage />}
                     />
+
+                    <Route path="/admin/pengguna" element={<AllUserPage />} />
                   </>
                 ) : (
                   <Route path="/admin/*" element={<ForbiddenPage />} />

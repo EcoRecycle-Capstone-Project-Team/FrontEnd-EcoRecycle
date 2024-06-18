@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Table, Card, Badge, Dropdown, Button } from "react-bootstrap";
+import { Table, Card, Badge, Dropdown, Button, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
 import {
   deletePelaporanAsync,
@@ -10,11 +10,18 @@ import {
   handleReject,
 } from "../../redux/authSlice";
 import { useNavigate } from "react-router-dom";
+import Loading from "../loading/Loading";
 
 const LaporanTpa = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const pelaporan = useSelector((state) => state.auth.pelaporan);
+  const isLoading = useSelector((state) => state.auth.isLoading);
+  const error = useSelector((state) => state.auth.error);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [reportsPerPage, setReportsPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     dispatch(getAllPelaporanAsync());
@@ -91,6 +98,33 @@ const LaporanTpa = () => {
     return new Date(dateString).toLocaleDateString("id-ID", options);
   };
 
+  const filteredPelaporan = pelaporan.filter((item) =>
+    item.nama_pelapor.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const indexOfLastReport = currentPage * reportsPerPage;
+  const indexOfFirstReport = indexOfLastReport - reportsPerPage;
+  const currentReports = filteredPelaporan.slice(
+    indexOfFirstReport,
+    indexOfLastReport
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const handleSearchChange = (e) => setSearchTerm(e.target.value);
+
+  const handlePerPageChange = (e) => {
+    setReportsPerPage(parseInt(e.target.value));
+    setCurrentPage(1);
+  };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
+  }
+
   return (
     <main
       role="main"
@@ -102,7 +136,36 @@ const LaporanTpa = () => {
 
       <Card>
         <Card.Header>Tabel Data Sebaran Lokasi TPA</Card.Header>
-        <Card.Body style={{ marginTop: "-1rem" }}>
+        <Card.Body>
+          <div className="d-flex justify-content-between mb-3">
+            <Form>
+              <Form.Group controlId="searchForm">
+                <Form.Label className="mr-2">Search:</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Cari nama pelapor..."
+                  value={searchTerm}
+                  onChange={handleSearchChange}
+                />
+              </Form.Group>
+            </Form>
+            <Form>
+              <Form.Group controlId="perPageForm">
+                <Form.Label className="mr-2">Entri per Halaman:</Form.Label>
+                <Form.Control
+                  as="select"
+                  value={reportsPerPage}
+                  onChange={handlePerPageChange}
+                >
+                  <option value={10}>10</option>
+                  <option value={20}>20</option>
+                  <option value={30}>30</option>
+                  <option value={50}>50</option>
+                </Form.Control>
+              </Form.Group>
+            </Form>
+          </div>
+
           <div className="table-responsive">
             <Table striped bordered hover>
               <thead>
@@ -117,9 +180,11 @@ const LaporanTpa = () => {
                 </tr>
               </thead>
               <tbody>
-                {pelaporan.map((row, index) => (
+                {currentReports.map((row, index) => (
                   <tr key={index}>
-                    <td style={{ textAlign: "center" }}>{index + 1}</td>
+                    <td style={{ textAlign: "center" }}>
+                      {indexOfFirstReport + index + 1}
+                    </td>
                     <td>{row.nama_pelapor}</td>
                     <td>{formatDate(row.created_at)}</td>
                     <td>{row.jenis_lokasi}</td>
@@ -173,6 +238,26 @@ const LaporanTpa = () => {
               </tbody>
             </Table>
           </div>
+
+          <ul className="pagination justify-content-center">
+            {Array.from(
+              {
+                length: Math.ceil(filteredPelaporan.length / reportsPerPage),
+              },
+              (_, i) => (
+                <li
+                  key={i}
+                  className={`page-item ${
+                    currentPage === i + 1 ? "active" : ""
+                  }`}
+                >
+                  <button onClick={() => paginate(i + 1)} className="page-link">
+                    {i + 1}
+                  </button>
+                </li>
+              )
+            )}
+          </ul>
         </Card.Body>
       </Card>
     </main>

@@ -6,6 +6,7 @@ import {
 } from "../../redux/authSlice";
 import { Button, Table } from "react-bootstrap";
 import Swal from "sweetalert2";
+import Loading from "../loading/Loading";
 
 const NoReportIllustration = () => (
   <div className="no-report-illustration">
@@ -20,7 +21,7 @@ const NoReportIllustration = () => (
 
 const LaporanSaya = () => {
   const dispatch = useDispatch();
-  const { userReports, isLoading } = useSelector((state) => state.auth);
+  const { userReports, isLoading, error } = useSelector((state) => state.auth);
   const userId = useSelector((state) => state.auth.userProfile?.id);
 
   let reportNumber = 0;
@@ -55,6 +56,14 @@ const LaporanSaya = () => {
       });
     }
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
+  }
 
   return (
     <>

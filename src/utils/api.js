@@ -316,3 +316,25 @@ export const updateUserProfile = async (id, profileData, token) => {
     throw error.response.data;
   }
 };
+
+export const getAllUsers = async () => {
+  try {
+    const response = await forumAPI.get("/users");
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
+export const deleteUserById = async (id, token) => {
+  try {
+    const response = await forumAPI.delete(`/users/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
