@@ -22,7 +22,6 @@ const Sidebar = () => {
       label: "Data TPA Masuk",
     },
     { to: "/admin/pengguna", icon: "fas fa-users", label: "Pengguna" },
-    { to: "/admin/statistik", icon: "fas fa-chart-line", label: "Statistik" },
   ];
 
   return (

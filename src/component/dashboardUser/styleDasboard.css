@@ -197,3 +197,101 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
+.img-infodata {
+    width: 40%;
+}
+
+.isicard {
+    margin-left: -1.4rem
+}
+
+.content .nopad {
+    padding: 0;
+}
+
+@media (max-width: 1095px) {
+    .main {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .main {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .sidebarUser {
+        width: 100%;
+        max-width: none;
+    }
+
+    .edit-options ul li {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .content {
+        margin-top: 20px;
+        width: auto;
+    }
+
+    .content .nopad {
+        padding: 0;
+    }
+
+    .img-infodata {
+        width: 50%;
+    }
+
+    .isicard {
+        margin-left: -0.2rem
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .report-img {
+        padding: 10px;
+        border-radius: 1rem;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .sidebarUser {
+        width: 100%;
+        max-width: none;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-card img {
+        margin-bottom: 10px;
+    }
+
+    .profile-options ul li a {
+        justify-content: left;
+    }
+
+    .edit-options ul li a {
+        justify-content: left;
+    }
+
+    .content {
+        width: auto;
+    }
+
+    .img-infodata {
+        width: 70%;
+    }
+}

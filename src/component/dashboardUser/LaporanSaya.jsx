@@ -6,13 +6,14 @@ import {
 } from "../../redux/authSlice";
 import { Button, Table } from "react-bootstrap";
 import Swal from "sweetalert2";
+import Loading from "../loading/Loading";
 
 const NoReportIllustration = () => (
   <div className="no-report-illustration">
     <img
       src="/assets/no-report.png"
-      style={{ width: "40%" }}
       alt="Illustration"
+      className="img-infodata"
     />
     <p>Yah Anda belum memiliki laporan. Yuk laporkan masalah sampah anda!</p>
   </div>
@@ -20,7 +21,7 @@ const NoReportIllustration = () => (
 
 const LaporanSaya = () => {
   const dispatch = useDispatch();
-  const { userReports, isLoading } = useSelector((state) => state.auth);
+  const { userReports, isLoading, error } = useSelector((state) => state.auth);
   const userId = useSelector((state) => state.auth.userProfile?.id);
 
   let reportNumber = 0;
@@ -56,6 +57,14 @@ const LaporanSaya = () => {
     }
   };
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
+  }
+
   return (
     <>
       <section className="content">
@@ -72,7 +81,7 @@ const LaporanSaya = () => {
                 <NoReportIllustration />
               ) : (
                 <div className="table-responsive">
-                  <Table striped bordered hover>
+                  <Table striped bordered hover responsive>
                     <thead>
                       <tr>
                         <th>No</th>

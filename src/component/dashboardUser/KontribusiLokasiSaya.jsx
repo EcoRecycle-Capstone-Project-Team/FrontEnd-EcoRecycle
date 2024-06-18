@@ -6,12 +6,13 @@ import {
 import { useEffect } from "react";
 import { Button, Table } from "react-bootstrap";
 import Swal from "sweetalert2";
+import Loading from "../loading/Loading";
 
 const NoReportIllustration = () => (
   <div className="no-report-illustration">
     <img
       src="/assets/no-location-report.png"
-      style={{ width: "40%" }}
+      className="img-infodata"
       alt="Illustration"
     />
     <p>Yah Anda belum memiliki Kontribusi. Yuk tambahkan TPA di sekitar anda</p>
@@ -20,7 +21,9 @@ const NoReportIllustration = () => (
 
 const KontribusiLokasiSaya = () => {
   const dispatch = useDispatch();
-  const { userReportsTPA, isLoading } = useSelector((state) => state.auth);
+  const { userReportsTPA, isLoading, error } = useSelector(
+    (state) => state.auth
+  );
 
   let reportNumber = 0;
 
@@ -56,6 +59,14 @@ const KontribusiLokasiSaya = () => {
       });
     }
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
+  }
 
   return (
     <>

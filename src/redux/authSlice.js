@@ -18,6 +18,8 @@ import {
   getUserReportsTPA,
   deleteUserPelaporanById,
   updateUserProfile,
+  getAllUsers,
+  deleteUserById,
 } from "../utils/api";
 
 export const registerUserAsync = ({ username, email, password }) => {
@@ -330,6 +332,32 @@ export const updateUserProfileAsync = (id, profileData, token) => {
   };
 };
 
+export const getAllUsersAsync = () => {
+  return async (dispatch) => {
+    dispatch(getAllUsersStart());
+    try {
+      const response = await getAllUsers();
+      dispatch(getAllUsersSuccess(response.data.users));
+    } catch (error) {
+      dispatch(
+        getAllUsersFailure(error.response ? error.response.data : error.message)
+      );
+    }
+  };
+};
+
+export const deleteUserAsync = (id, token) => {
+  return async (dispatch) => {
+    dispatch(deleteUserStart());
+    try {
+      await deleteUserById(id, token);
+      dispatch(deleteUserSuccess(id));
+    } catch (error) {
+      dispatch(deleteUserFailure(error));
+    }
+  };
+};
+
 export const REGISTER_USER_START = "auth/registerUserStart";
 export const REGISTER_USER_SUCCESS = "auth/registerUserSuccess";
 export const REGISTER_USER_FAILURE = "auth/registerUserFailure";
@@ -410,6 +438,14 @@ export const DELETE_USER_REPORT_TPA_FAILURE =
 export const UPDATE_USER_PROFILE_START = "profile/updateUserProfileStart";
 export const UPDATE_USER_PROFILE_SUCCESS = "profile/updateUserProfileSuccess";
 export const UPDATE_USER_PROFILE_FAILURE = "profile/updateUserProfileFailure";
+
+export const GET_ALL_USERS_START = "users/getAllUsersStart";
+export const GET_ALL_USERS_SUCCESS = "users/getAllUsersSuccess";
+export const GET_ALL_USERS_FAILURE = "users/getAllUsersFailure";
+
+export const DELETE_USER_START = "DELETE_USER_START";
+export const DELETE_USER_SUCCESS = "DELETE_USER_SUCCESS";
+export const DELETE_USER_FAILURE = "DELETE_USER_FAILURE";
 
 const registerUserStart = () => ({ type: REGISTER_USER_START });
 const registerUserSuccess = (userData) => ({
@@ -610,12 +646,37 @@ export const updateUserProfileFailure = (error) => ({
   payload: error,
 });
 
+const getAllUsersStart = () => ({ type: GET_ALL_USERS_START });
+const getAllUsersSuccess = (data) => ({
+  type: GET_ALL_USERS_SUCCESS,
+  payload: data,
+});
+const getAllUsersFailure = (error) => ({
+  type: GET_ALL_USERS_FAILURE,
+  payload: error,
+});
+
+const deleteUserStart = () => ({
+  type: DELETE_USER_START,
+});
+
+const deleteUserSuccess = (id) => ({
+  type: DELETE_USER_SUCCESS,
+  payload: id,
+});
+
+const deleteUserFailure = (error) => ({
+  type: DELETE_USER_FAILURE,
+  payload: error,
+});
+
 const initialState = {
   user: null,
   isLoggedIn: localStorage.getItem("token") ? true : false,
   isLoading: false,
   error: null,
   userProfile: null,
+  users: [],
   pelaporan: [],
   pelaporanSampah: [],
   userReports: [],
@@ -950,6 +1011,42 @@ const authReducer = (state = initialState, action) => {
         userProfile: action.payload,
       };
     case UPDATE_USER_PROFILE_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
+    case GET_ALL_USERS_START:
+      return {
+        ...state,
+        isLoading: true,
+        error: null,
+      };
+    case GET_ALL_USERS_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        users: action.payload,
+      };
+    case GET_ALL_USERS_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
+    case DELETE_USER_START:
+      return {
+        ...state,
+        isLoading: true,
+        error: null,
+      };
+    case DELETE_USER_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        users: state.users.filter((user) => user.id !== action.payload),
+      };
+    case DELETE_USER_FAILURE:
       return {
         ...state,
         isLoading: false,

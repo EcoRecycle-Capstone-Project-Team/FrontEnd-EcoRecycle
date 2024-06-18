@@ -37,6 +37,7 @@ import NotFoundPage from "./component/error/NotFoundPage";
 import LacakStatusLapUserPage from "./pages/dashboardUser/LacakLaporan";
 import DokumentasiLokasi from "./component/EduComp/Dokumentasi/DokumentasiLokasi";
 import DokumentasiSampah from "./component/EduComp/Dokumentasi/DokumentasiSampah";
+import AllUserPage from "./pages/admin/AllUSerPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -172,6 +173,8 @@ function App() {
                       path="/admin/laporan-tpa/update/:id"
                       element={<UpdateTpaPage />}
                     />
+
+                    <Route path="/admin/pengguna" element={<AllUserPage />} />
                   </>
                 ) : (
                   <Route path="/admin/*" element={<ForbiddenPage />} />

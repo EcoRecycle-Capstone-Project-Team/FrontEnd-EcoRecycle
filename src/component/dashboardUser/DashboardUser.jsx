@@ -1,17 +1,28 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOwnProfileAsync } from "../../redux/authSlice";
+import Loading from "../loading/Loading";
 
 function DashboardUser() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const userProfile = useSelector((state) => state.auth.userProfile);
+  const isLoading = useSelector((state) => state.auth.isLoading);
+  const error = useSelector((state) => state.auth.error);
 
   useEffect(() => {
     if (isLoggedIn) {
       dispatch(getOwnProfileAsync(localStorage.getItem("token")));
     }
   }, [dispatch, isLoggedIn]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
+  }
 
   return (
     <>
