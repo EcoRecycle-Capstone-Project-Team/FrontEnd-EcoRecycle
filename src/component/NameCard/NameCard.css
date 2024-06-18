@@ -1,0 +1,87 @@
+.name-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.namecard {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 10px;
+}
+
+.namecard-header {
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/assets/splash-background.jpg");
+}
+
+.profile-pic {
+  position: relative;
+  top: -50px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
+.namecard-body {
+  text-align: center;
+  padding: 20px;
+}
+
+.card-info h5 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-info p {
+  color: gray;
+  margin: 5px 0 20px 0;
+}
+
+.card-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.icon {
+  font-size: 29px;
+  color: #555;
+  transition: transform 0.3s, background-color 0.3s;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.icon.instagram:hover {
+  background-color: #e4405f;
+  color: white;
+}
+
+.icon.linkedin:hover {
+  background-color: #0077b5;
+  color: white;
+}
+
+.icon.github:hover {
+  background-color: black;
+  color: white;
+}

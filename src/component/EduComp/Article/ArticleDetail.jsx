@@ -7,6 +7,7 @@ import "./ArticleDetail.css";
 import { BsArrowLeft } from "react-icons/bs";
 import ShareIcons from "../SharedIcon/ShareIcon";
 import RecommendedArticles from "./RecommendedArticles";
+import NotFoundPage from "../../error/NotFoundPage";
 
 export default function ArticleDetail() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ export default function ArticleDetail() {
   const navigate = useNavigate();
 
   if (!article) {
-    return <div>Article not found</div>;
+    return <NotFoundPage />;
   }
 
   const handleBack = () => {

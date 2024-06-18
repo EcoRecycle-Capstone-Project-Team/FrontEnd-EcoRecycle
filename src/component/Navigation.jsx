@@ -67,7 +67,7 @@ export default function Navigation() {
                 </NavDropdown.Item>
               </NavDropdown>
             )}
-            <Nav.Link as={Link} to="/aboutUs" style={{ color: "#fff" }}>
+            <Nav.Link as={Link} to="/aboutus" style={{ color: "#fff" }}>
               About Us
             </Nav.Link>
             {isLoggedIn && (
@@ -96,9 +96,6 @@ export default function Navigation() {
               <>
                 <Nav.Link as={Link} to="/login" style={{ color: "#fff" }}>
                   Login
-                </Nav.Link>
-                <Nav.Link className="get-started" eventKey={2} href="#">
-                  Get Started
                 </Nav.Link>
               </>
             )}

@@ -86,12 +86,6 @@ const LaporanMasuk = () => {
     }
   };
 
-  const handleUpdateClick = (id) => {
-    if (id) {
-      navigate(`/admin/laporan-sampah/update/${id}`);
-    }
-  };
-
   const getBadgeVariant = (status) => {
     switch (status) {
       case "pending":
@@ -251,13 +245,6 @@ const LaporanMasuk = () => {
                         onClick={() => handleViewDetailClick(row.id)}
                       >
                         <i className="fas fa-eye"></i>
-                      </Button>
-                      <Button
-                        variant="warning"
-                        className="me-2 btn-sm"
-                        onClick={() => handleUpdateClick(row.id)}
-                      >
-                        <i className="fas fa-edit"></i>
                       </Button>
                       <Button
                         className="btn-sm"

@@ -3,7 +3,6 @@ import AdminLogin from "../../component/admin/AdminLogin";
 import AnimatedSection from "../../component/AnimatedSection";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import Footer from "../../component/Footer";
 import Navigation from "../../component/Navigation";
 import Swal from "sweetalert2";
 
@@ -34,7 +33,6 @@ function LoginPageAdmin() {
       <AnimatedSection>
         <AdminLogin onLoginAdmin={handleLogin} />
       </AnimatedSection>
-      <Footer />
     </>
   );
 }

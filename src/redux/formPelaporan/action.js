@@ -26,8 +26,7 @@ export const submitReportAsync = (formData, reportType) => async (dispatch) => {
   try {
     const data = await submitReport(formData, reportType);
     dispatch(submitReportSuccess(data));
-    alert("Laporan berhasil dikirim!");
-    window.location.reload();
+    window.location.href = "/dashboard";
   } catch (error) {
     dispatch(submitReportFailure(error));
     alert("Gagal mengirim laporan.");

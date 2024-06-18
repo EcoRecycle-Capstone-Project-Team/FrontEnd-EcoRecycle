@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -18,23 +19,17 @@ export default function Footer() {
               <span className="h5 mb-0">EcoRecycle</span>
             </div>
             <p className="mb-0">
-              Welcome to Estrella, where brilliance meets innovation!
+              Bersama Ecorecycle, melindungi lingkungan kita bersama
               <br />
-              We are a leading company dedicated to delivering exceptional
-              products and services to cater to your needs.
+              Bersama Kelola Sampah, Mewujudkan Bumi yang Lebih Baik
             </p>
             <div className="mt-3">
-              <a href="#" className="text-light me-3">
-                <FaFacebook size={24} />
-              </a>
-              <a href="#" className="text-light me-3">
-                <FaTwitter size={24} />
-              </a>
-              <a href="#" className="text-light me-3">
-                <FaInstagram size={24} />
-              </a>
-              <a href="#" className="text-light">
-                <FaLinkedin size={24} />
+              <a
+                href="https://github.com/EcoRecycle-Capstone-Project-Team"
+                target="_blank"
+                className="text-light me-3"
+              >
+                <FaGithub size={24} />
               </a>
             </div>
           </Col>
@@ -43,24 +38,24 @@ export default function Footer() {
             <Row>
               <Col>
                 <p className="mb-2">
-                  <a href="#" className="text-light">
-                    Sebaran
-                  </a>
+                  <Link to="/sebaranlokasi" className="text-light">
+                    Sebaran Lokasi
+                  </Link>
                 </p>
                 <p className="mb-2">
-                  <a href="#" className="text-light">
+                  <Link to="/sebaransampah" className="text-light">
+                    Sebaran Sampah
+                  </Link>
+                </p>
+                <p className="mb-2">
+                  <Link to="/edukasi" className="text-light">
                     Edukasi
-                  </a>
+                  </Link>
                 </p>
                 <p className="mb-2">
-                  <a href="#" className="text-light">
-                    Form Pelaporan
-                  </a>
-                </p>
-                <p className="mb-2">
-                  <a href="#" className="text-light">
+                  <Link to="/aboutus" className="text-light">
                     About Us
-                  </a>
+                  </Link>
                 </p>
               </Col>
             </Row>
@@ -68,8 +63,8 @@ export default function Footer() {
           <Col md={4}>
             <h5 className="mb-4 green-line">Subscribe</h5>
             <p className="mb-2">Email: contact@ecorecycle.com</p>
-            <p className="mb-2">Phone: +123 456 7890</p>
-            <p className="mb-2">Address: 123 Eco St, Green City, Country</p>
+            <p className="mb-2">No. Telp: +6282162205010</p>
+            <p className="mb-2">Alamat: Jakarta Pusat</p>
           </Col>
         </Row>
         <hr className="my-3" />

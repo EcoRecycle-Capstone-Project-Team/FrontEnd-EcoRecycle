@@ -90,19 +90,19 @@ export default function HeroHeader() {
             end={countUser}
             duration={2.5}
             suffix="+"
-            text="Users Joined"
+            text="User Bergabung"
           />
           <StatItem
             end={countResolvedPelaporanSampah}
             duration={2.5}
             suffix="+"
-            text="Reports Completed"
+            text="Laporan Selesai"
           />
           <StatItem
             end={conutPela}
             duration={2.5}
             suffix="T"
-            text="Waste Recycled"
+            text="Daur Ulang Limbah"
           />
         </Row>
       </Container>

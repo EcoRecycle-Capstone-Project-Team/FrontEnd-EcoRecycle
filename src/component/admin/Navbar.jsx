@@ -44,9 +44,6 @@ const NavbarAdmin = () => {
             }
             id="profileDropdown"
           >
-            <NavDropdown.Item href="#">Profile</NavDropdown.Item>
-            <NavDropdown.Item href="#">Settings</NavDropdown.Item>
-            <NavDropdown.Divider />
             <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
           </NavDropdown>
         </Nav>

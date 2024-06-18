@@ -71,12 +71,6 @@ const LaporanTpa = () => {
     }
   };
 
-  const handleUpdateClick = (id) => {
-    if (id) {
-      navigate(`/admin/laporan-tpa/update/${id}`);
-    }
-  };
-
   const getBadgeVariant = (status) => {
     switch (status) {
       case "verify":
@@ -217,13 +211,6 @@ const LaporanTpa = () => {
                         onClick={() => handleViewDetailClick(row.id)}
                       >
                         <i className="fas fa-eye"></i>
-                      </Button>
-                      <Button
-                        variant="warning"
-                        className="me-2 btn-sm"
-                        onClick={() => handleUpdateClick(row.id)}
-                      >
-                        <i className="fas fa-edit"></i>
                       </Button>
                       <Button
                         className="btn-sm"

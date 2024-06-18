@@ -21,11 +21,7 @@ export default function ArticleItem({ article }) {
             {article.title}
           </Card.Title>
           <div className="author-info">
-            <img
-              src="https://via.placeholder.com/30"
-              alt="Author"
-              className="author-image"
-            />
+            <img src="/assets/nasa.jpg" alt="Author" className="author-image" />
             <div>
               <div>{article.author}</div>
               <div>{article.date}</div>

@@ -26,7 +26,7 @@ export default function RegisterPage() {
     <>
       <Navigation />
       <AnimatedSection>
-        <main className="d-flex flex-column align-items-center justify-content-center mb-3">
+        <main className="d-flex flex-column align-items-center justify-content-center mb-3 mt-5">
           <div className="text-center mb-4">
             <img
               src="/assets/MainLogo.png"

@@ -146,8 +146,10 @@ const MapSebaranSampah = () => {
                 key={index}
                 position={{ lat: location.lat, lng: location.lng }}
                 icon={
-                  location.status === "approved"
+                  location.status === "resolved"
                     ? "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                    : location.status === "in_progress"
+                    ? "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
                     : "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
                 }
                 onClick={() => handleMarkerClick(location)}
@@ -231,10 +233,24 @@ const MapSebaranSampah = () => {
               >
                 <img
                   src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"
-                  alt="Approved"
+                  alt="resolved"
                   style={{ marginRight: "8px" }}
                 />
-                Approved
+                Resolved
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "5px",
+                }}
+              >
+                <img
+                  src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+                  alt="In Progress"
+                  style={{ marginRight: "8px" }}
+                />
+                In Progress
               </div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <img

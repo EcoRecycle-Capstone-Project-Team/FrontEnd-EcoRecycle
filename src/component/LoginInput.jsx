@@ -8,10 +8,23 @@ import { loginUserAsync } from "../redux/authSlice";
 const LoginInput = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
   const error = useSelector((state) => state.auth.error);
   const dispatch = useDispatch();
 
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
   const handleLogin = async () => {
+    if (!validateEmail(email)) {
+      setEmailError("Email tidak valid!");
+      return;
+    } else {
+      setEmailError("");
+    }
+
     try {
       const response = await dispatch(loginUserAsync({ email, password }));
       const { status, message } = response.payload;
@@ -22,7 +35,7 @@ const LoginInput = ({ onLogin }) => {
         error(message);
       }
     } catch (error) {
-      ("Terjadi kesalahan saat melakukan login. Silakan coba lagi.");
+      console.error("Terjadi kesalahan saat melakukan login:", error.message);
     }
   };
 
@@ -41,6 +54,7 @@ const LoginInput = ({ onLogin }) => {
           className="form-control"
         />
       </FloatingLabel>
+      {emailError && <Alert variant="danger">{emailError}</Alert>}
       <FloatingLabel
         controlId="floatingPassword"
         label="Password"

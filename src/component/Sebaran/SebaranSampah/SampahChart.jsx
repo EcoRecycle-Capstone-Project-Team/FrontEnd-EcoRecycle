@@ -9,30 +9,42 @@ const SampahChart = () => {
 
   const statusCount = sampahLocations.reduce(
     (acc, curr) => {
-      if (curr.status === "approved") {
+      if (curr.status === "resolved") {
         acc.approved += 1;
+      } else if (curr.status === "in_progress") {
+        acc.in_progress += 1;
       } else if (curr.status === "pending") {
         acc.pending += 1;
       }
       return acc;
     },
-    { approved: 0, pending: 0 }
+    { approved: 0, pending: 0, in_progress: 0 }
   );
 
-  const total = statusCount.approved + statusCount.pending;
+  const total =
+    statusCount.approved + statusCount.pending + statusCount.in_progress;
   const approvedPercentage = ((statusCount.approved / total) * 100).toFixed(2);
   const pendingPercentage = ((statusCount.pending / total) * 100).toFixed(2);
+  const in_progressPercentage = (
+    (statusCount.in_progress / total) *
+    100
+  ).toFixed(2);
 
   const data = {
     labels: [
       `Approved (${approvedPercentage}%)`,
+      `In Progress(${in_progressPercentage}%)`,
       `Pending (${pendingPercentage}%)`,
     ],
     datasets: [
       {
         label: "Status Sampah",
-        data: [statusCount.approved, statusCount.pending],
-        backgroundColor: ["#28a745", "#dc3545"],
+        data: [
+          statusCount.approved,
+          statusCount.pending,
+          statusCount.in_progress,
+        ],
+        backgroundColor: ["#28a745", "#dc3545", "#ffff00"],
         hoverOffset: 4,
       },
     ],

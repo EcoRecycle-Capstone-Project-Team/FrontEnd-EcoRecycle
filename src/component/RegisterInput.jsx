@@ -19,10 +19,23 @@ export default function RegisterInput({ register }) {
   const [password, onPasswordChange] = useInput("");
   const [repassword, onRepasswordChange] = useInput("");
   const [showToast, setShowToast] = useState(false);
+  const [emailError, setEmailError] = useState("");
   const dispatch = useDispatch();
   const error = useSelector((state) => state.auth.error);
 
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
   const handleRegister = async () => {
+    if (!validateEmail(email)) {
+      setEmailError("Email tidak valid!");
+      return;
+    } else {
+      setEmailError("");
+    }
+
     if (password !== repassword) {
       setShowToast(true);
       return;
@@ -72,6 +85,7 @@ export default function RegisterInput({ register }) {
           className="form-control"
         />
       </FloatingLabel>
+      {emailError && <Alert variant="danger">{emailError}</Alert>}
       <FloatingLabel
         controlId="floatingPassword"
         label="Password"

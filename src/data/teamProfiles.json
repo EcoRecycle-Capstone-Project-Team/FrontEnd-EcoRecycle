@@ -1,14 +1,26 @@
 [
   {
     "name": "Isep Firmansyah",
-    "jobdesk": "Back End Engineer"
+    "jobdesk": "Front End & Back End",
+    "imageUrl": "/assets/isepirmansyah.jpg",
+    "instagramUrl": "https://www.instagram.com/isepirmansyah",
+    "linkedinUrl": "https://www.linkedin.com/in/isep-irmansyah/",
+    "githubUrl": "https://github.com/isepirmansyah"
   },
   {
     "name": "M. Natasya Ramadana",
-    "jobdesk": "Front End & UI/UX"
+    "jobdesk": "Front End & UI/UX",
+    "imageUrl": "/assets/nasa.jpg",
+    "instagramUrl": "https://www.instagram.com/mhdnasa/",
+    "linkedinUrl": "https://www.linkedin.com/in/mnatasyar/",
+    "githubUrl": "https://github.com/mnatasyar"
   },
   {
     "name": "M. Agus Dharma Killin",
-    "jobdesk": "Front End & Project Manager"
+    "jobdesk": "UI & UX",
+    "imageUrl": "/assets/agus.jpeg",
+    "instagramUrl": "https://www.instagram.com/agus_d.k/",
+    "linkedinUrl": "https://www.linkedin.com/in/moch-agus-dk/",
+    "githubUrl": "https://github.com/madkilin"
   }
 ]
