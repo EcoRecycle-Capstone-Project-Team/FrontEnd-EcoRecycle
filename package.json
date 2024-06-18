@@ -35,7 +35,7 @@
     "react-typed": "^2.0.12",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.11",
-    "sweetalert2": "^11.11.1"
+    "sweetalert2": "^10.16.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
