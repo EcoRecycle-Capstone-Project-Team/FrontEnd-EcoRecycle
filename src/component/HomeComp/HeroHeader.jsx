@@ -3,8 +3,33 @@ import { ReactTyped } from "react-typed";
 import StatItem from "./StatItem";
 import { Link } from "react-scroll";
 import "./HomeComp.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import {
+  getAllPelaporanAsync,
+  getAllPelaporanSampahAsync,
+  getAllUsersAsync,
+} from "../../redux/authSlice";
 
 export default function HeroHeader() {
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.auth.users);
+  const pelaporanSampah = useSelector((state) => state.auth.pelaporanSampah);
+  const pelaporan = useSelector((state) => state.auth.pelaporan);
+
+  const countUser = users.length;
+  const conutPela = pelaporan.length;
+  const resolvedPelaporanSampah = pelaporanSampah.filter(
+    (report) => report.status === "resolved"
+  );
+  const countResolvedPelaporanSampah = resolvedPelaporanSampah.length;
+
+  useEffect(() => {
+    dispatch(getAllUsersAsync());
+    dispatch(getAllPelaporanSampahAsync());
+    dispatch(getAllPelaporanAsync());
+  }, [dispatch]);
+
   return (
     <div className="hero-header w-100 d-flex align-items-center justify-content-center">
       <Container>
@@ -61,14 +86,24 @@ export default function HeroHeader() {
           </Col>
         </Row>
         <Row className="mt-4">
-          <StatItem end={10000} duration={2.5} suffix="+" text="Users Joined" />
           <StatItem
-            end={500}
+            end={countUser}
+            duration={2.5}
+            suffix="+"
+            text="Users Joined"
+          />
+          <StatItem
+            end={countResolvedPelaporanSampah}
             duration={2.5}
             suffix="+"
             text="Reports Completed"
           />
-          <StatItem end={100} duration={2.5} suffix="T" text="Waste Recycled" />
+          <StatItem
+            end={conutPela}
+            duration={2.5}
+            suffix="T"
+            text="Waste Recycled"
+          />
         </Row>
       </Container>
     </div>
