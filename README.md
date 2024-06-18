@@ -6,10 +6,16 @@
 </p>
 
 ## Teknologi Yang Digunakan
-Aplikasi dibangun menggunakan beberapa teknologi, diantaranya adalah:
-<p>
-  <img src="https://skillicons.dev/icons?i=react,kubernetes,docker,c,vim" />
-</p>
+### Aplikasi dibangun menggunakan beberapa teknologi, utama diantaranya adalah:
+- **React**
+- **React Bootstrap**
+- **Redux**
+- **Axios**
+- **ESLint**
+
+### API utama yang Digunakan:
+- **Google Maps API**
+- **EcoRecycle API**: https://api.ecorecycle.my.id/ | API khusus yang menyediakan dan menyimpan data terkait lokasi TPA, bank sampah, sebaran sampah, dan informasi lainnya yang dibutuhkan oleh aplikasi.
 
 ## Panduan Kloning Repository
 Untuk mengkloning repository front-end EcoRecycle ke komputer Anda, ikuti langkah-langkah berikut:
