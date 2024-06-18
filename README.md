@@ -5,6 +5,8 @@
   <h3 align="center">EcoRecycle (https://ecorecycle.my.id)</h3>
 </p>
 
+Ini adalah repositori front-end yang digunakan untuk Capstone Project Program Studi Mandiri (SIB) Kampus Merdeka x Dicoding Batch 6.
+
 ## Teknologi Yang Digunakan
 ### Aplikasi dibangun menggunakan beberapa teknologi, utama diantaranya adalah:
 - **React**
