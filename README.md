@@ -1,39 +1,69 @@
-# EcoRecycle { React + Vite }
+# EcoRecycle - Front End Repository
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules. It also integrates React Bootstrap for UI components.
+## Teknologi Yang Digunakan
+Aplikasi dibangun menggunakan beberapa teknologi, diantaranya adalah:
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=git,kubernetes,docker,c,vim" />
+</a>
 
-## Available Scripts
+## Panduan Kloning Repository Ini
+Untuk mengkloning repository front-end EcoRecycle ke komputer Anda, ikuti langkah-langkah berikut:
 
-In the project directory, you can run:
+1. **Pastikan Anda memiliki Git dan Node.js terinstal di komputer Anda.**  
+   Jika belum, Anda dapat mengunduh dan menginstalnya dari tautan berikut:
+   - [Download Git](https://git-scm.com/downloads)
+   - [Download Node.js](https://nodejs.org/)
 
-### `npm install`
+2. **Buka terminal atau command prompt.**
 
-Install all the dependencies required for the project.
+3. **Kloning repository dengan perintah berikut:**
 
-### `npm run dev`
+   ```bash
+   git clone https://github.com/EcoRecycle-Capstone-Project-Team/FrontEnd-EcoRecycle.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. Navigasi ke direktori proyek yang baru saja Anda kloning:
 
-### `npm run build`
+   ```bash
+   cd FrontEnd-EcoRecycle
 
-Builds the app for production to the `dist` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Instal semua dependensi yang diperlukan dengan perintah berikut:
 
-### `npm start`
+   ```bash
+   npm install
 
-Runs the built app in production mode.\
-Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+6. Buat file baru .env di root directory proyek dan tambahkan kode berikut:
 
-## Using React Bootstrap
+   ```bash
+   #untuk mendapatkan api key Google Maps Api, kamu dapat mengakses dan mendaftar melalui [Google Maps Platform](https://developers.google.com/maps)
+   VITE_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
 
-This project integrates React Bootstrap for UI components. You can find the documentation and examples at [React Bootstrap](https://react-bootstrap.github.io/).
+7. Jalankan proyek secara lokal menggunakan Vite:
 
-## How to Run
+   ```bash
+   npm run dev
 
-1. Clone this repository to your local machine.
-2. Navigate to the project directory.
-3. Run `npm install` to install all the dependencies.
-4. Run `npm run dev` to start the development server.
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+Setelah menjalankan perintah ini, Anda akan melihat pesan yang menunjukkan bahwa server pengembangan telah dimulai dan memberikan URL lokal (biasanya http://localhost:5173) untuk melihat aplikasi di browser Anda.
+
+## Struktur Direktori
+```plaintext
+FrontEnd-EcoRecycle/
+├── public/
+│   └── assets/
+├── src/
+│   ├── components/
+│   ├── data/
+│   ├── hooks/
+│   ├── pages/
+│   ├── redux/
+│   ├── style/
+│   ├── utils/
+│   ├── App.jsx
+│   └── main.jsx
+├── .env
+├── .gitignore
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
+
