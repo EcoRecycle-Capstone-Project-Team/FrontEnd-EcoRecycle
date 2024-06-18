@@ -101,8 +101,8 @@ export default function HeroHeader() {
           <StatItem
             end={conutPela}
             duration={2.5}
-            suffix="T"
-            text="Daur Ulang Limbah"
+            suffix=" Titik"
+            text="Lokasi TPA & Bank Sampah Terdaftar"
           />
         </Row>
       </Container>
