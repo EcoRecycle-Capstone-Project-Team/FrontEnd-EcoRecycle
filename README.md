@@ -1,7 +1,7 @@
 # EcoRecycle - Front End Repository
 
 <p align="center">
-  <img src="public/assets/MainLogo.png" alt="LogoEcoRecycle" width="200">
+  <img src="public/assets/MainLogo.png" alt="LogoEcoRecycle" width="250">
   <h3 align="center">EcoRecycle (https://ecorecycle.my.id)</h3>
 </p>
 
