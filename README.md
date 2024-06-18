@@ -1,5 +1,10 @@
 # EcoRecycle - Front End Repository
 
+<p align="center">
+  <img src="public/assets/MainLogo.png" alt="LogoHopePoints" width="200">
+  <h3 align="center">EcoRecycle (https://ecorecycle.my.id)</h3>
+</p>
+
 ## Teknologi Yang Digunakan
 Aplikasi dibangun menggunakan beberapa teknologi, diantaranya adalah:
 <p>
