@@ -4,8 +4,8 @@ import { Container } from "react-bootstrap";
 import { fetchSampahLocations } from "../../../utils/api";
 import { setSampahLocations } from "../../../redux/mapSebaranSampah/action";
 import DokumentasiGallery from "./DokumentasiGallery";
-import Navigation from "../../Navigation";
-import Footer from "../../Footer";
+import Navigation from "../../Layout/Navigation";
+import Footer from "../../Layout/Footer";
 import "./Dokumentasi.css";
 
 export default function DokumentasiSampah() {

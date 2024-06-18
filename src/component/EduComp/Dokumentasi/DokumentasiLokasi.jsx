@@ -7,8 +7,8 @@ import {
   setBankSampahLocations,
 } from "../../../redux/maps/action";
 import DokumentasiGallery from "./DokumentasiGallery";
-import Navigation from "../../Navigation";
-import Footer from "../../Footer";
+import Navigation from "../../Layout/Navigation";
+import Footer from "../../Layout/Footer";
 import "./Dokumentasi.css";
 
 export default function DokumentasiLokasi() {

@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUserAsync } from "../redux/authSlice";
-import RegisterInput from "../component/RegisterInput";
+import RegisterInput from "../component/Form/RegisterInput";
 import AnimatedSection from "../component/AnimatedSection";
 import { useEffect } from "react";
-import Navigation from "../component/Navigation";
+import Navigation from "../component/Layout/Navigation";
 
 export default function RegisterPage() {
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import Navigation from "../../component/Navigation";
+import Navigation from "../../component/Layout/Navigation";
 import DashboardUser from "../../component/dashboardUser/DashboardUser";
 import SidebarUser from "../../component/dashboardUser/SidebarUser";
 import "../../component/dashboardUser/styleDasboard.css";

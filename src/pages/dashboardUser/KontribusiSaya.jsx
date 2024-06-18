@@ -1,4 +1,4 @@
-import Navigation from "../../component/Navigation";
+import Navigation from "../../component/Layout//Navigation";
 import KontribusiLokasiSaya from "../../component/dashboardUser/KontribusiLokasiSaya";
 import SidebarUser from "../../component/dashboardUser/SidebarUser";
 import "../../component/dashboardUser/styleDasboard.css";

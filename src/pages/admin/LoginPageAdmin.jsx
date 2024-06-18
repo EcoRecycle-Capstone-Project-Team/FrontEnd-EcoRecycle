@@ -3,7 +3,7 @@ import AdminLogin from "../../component/admin/AdminLogin";
 import AnimatedSection from "../../component/AnimatedSection";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import Navigation from "../../component/Navigation";
+import Navigation from "../../component/Layout/Navigation";
 import Swal from "sweetalert2";
 
 function LoginPageAdmin() {

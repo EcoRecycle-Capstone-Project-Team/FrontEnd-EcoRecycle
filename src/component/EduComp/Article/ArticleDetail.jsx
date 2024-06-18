@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import articlesData from "../../../data/articlesData.json";
 import { Container, Image } from "react-bootstrap";
-import Navigation from "../../Navigation";
-import Footer from "../../Footer";
+import Navigation from "../../Layout/Navigation";
+import Footer from "../../Layout/Footer";
 import "./ArticleDetail.css";
 import { BsArrowLeft } from "react-icons/bs";
 import ShareIcons from "../SharedIcon/ShareIcon";

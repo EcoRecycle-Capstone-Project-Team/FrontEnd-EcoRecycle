@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Form, Button, FloatingLabel, Nav, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUserAsync } from "../redux/authSlice";
+import { loginUserAsync } from "../../redux/authSlice";
 
 const LoginInput = ({ onLogin }) => {
   const [email, setEmail] = useState("");
@@ -67,9 +67,6 @@ const LoginInput = ({ onLogin }) => {
           onChange={(e) => setPassword(e.target.value)}
           className="form-control"
         />
-        <Form.Text className="text-muted form-text password-help">
-          Lupa Kata Sandi?
-        </Form.Text>
       </FloatingLabel>
       {error && <Alert variant="danger">{error}</Alert>}
       <div className="button-container">

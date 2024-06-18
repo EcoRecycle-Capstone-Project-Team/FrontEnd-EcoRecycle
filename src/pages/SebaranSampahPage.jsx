@@ -5,7 +5,7 @@ import SampahTable from "../component/Sebaran/SebaranSampah/SampahTable";
 import HeroSection from "../component/Hero/HeroSection";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-import Navigation from "../component/Navigation";
+import Navigation from "../component/Layout/Navigation";
 
 const containerVariants = {
   hidden: { opacity: 0 },

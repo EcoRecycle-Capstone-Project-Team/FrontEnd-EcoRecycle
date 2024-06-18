@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import LoginInput from "../component/LoginInput";
+import LoginInput from "../component/Form/LoginInput";
 import AnimatedSection from "../component/AnimatedSection";
 import { useEffect } from "react";
-import Navigation from "../component/Navigation";
+import Navigation from "../component/Layout/Navigation";
 
 const LoginPage = () => {
   const navigate = useNavigate();

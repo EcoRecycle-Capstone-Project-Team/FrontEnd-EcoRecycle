@@ -217,13 +217,11 @@ export default function FormPelaporanSampah() {
                   <Form.Group controlId="kode_pos">
                     <Form.Label>Kode Pos</Form.Label>
                     <Form.Control
-                      type="text"
+                      type="number"
                       name="kode_pos"
                       value={formValues.kode_pos}
                       onChange={handleInputChange}
-                      style={{ backgroundColor: "#e9ecef" }}
                       required
-                      readOnly
                     />
                   </Form.Group>
                 </Col>

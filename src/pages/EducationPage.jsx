@@ -1,9 +1,9 @@
 import PageTransitionWrapper from "../component/Animations/PageTransitionWrapper";
 import ArticlesList from "../component/EduComp/Article/ArticlesList";
 import DokumentasiList from "../component/EduComp/Dokumentasi/DokumentasiList";
-import Navigation from "../component/Navigation";
+import Navigation from "../component/Layout/Navigation";
 import HeroSection from "../component/Hero/HeroSection";
-import Footer from "../component/Footer";
+import Footer from "../component/Layout/Footer";
 
 export default function EducationPage() {
   return (

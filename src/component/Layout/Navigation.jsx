@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser, getOwnProfileAsync } from "../redux/authSlice";
+import { logoutUser, getOwnProfileAsync } from "../../redux/authSlice";
 import { useEffect } from "react";
 
 export default function Navigation() {

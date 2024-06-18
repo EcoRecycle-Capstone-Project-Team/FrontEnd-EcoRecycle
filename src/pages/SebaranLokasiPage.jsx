@@ -3,7 +3,7 @@ import MapSebaranLokasi from "../component/Sebaran/Sebaran Lokasi/MapSebaranLoka
 import DoughnutLokasi from "../component/Sebaran/Sebaran Lokasi/DoughnutLokasi";
 import TabelLokasi from "../component/Sebaran/Sebaran Lokasi/TabelLokasi";
 import HeroSection from "../component/Hero/HeroSection";
-import Navigation from "../component/Navigation";
+import Navigation from "../component/Layout/Navigation";
 
 export default function SebaranLokasiPage() {
   return (

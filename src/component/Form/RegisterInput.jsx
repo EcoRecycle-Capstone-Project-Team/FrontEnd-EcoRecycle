@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import useInput from "../hooks/useInput";
+import useInput from "../../hooks/useInput";
 import {
   Form,
   Button,
@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUserAsync } from "../redux/authSlice";
+import { registerUserAsync } from "../../redux/authSlice";
 
 export default function RegisterInput({ register }) {
   const [username, onNameChange] = useInput("");

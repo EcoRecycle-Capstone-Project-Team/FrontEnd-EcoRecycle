@@ -2,8 +2,8 @@ import AnimatedSection from "../component/AnimatedSection";
 import PropTypes from "prop-types";
 import teamProfile from "../data/teamProfiles.json";
 import NameCardList from "../component/NameCard/NameCardList";
-import Navigation from "../component/Navigation";
-import Footer from "../component/Footer";
+import Navigation from "../component/Layout/Navigation";
+import Footer from "../component/Layout/Footer";
 import { Image } from "react-bootstrap";
 
 export default function AboutUsPage() {
