@@ -1,0 +1,94 @@
+.dokumentasi-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.dokumentasi-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.dokumentasi-title {
+  font-size: 2rem !important;
+  font-weight: bold;
+}
+
+.dokumentasi-description {
+  font-size: 1rem !important;
+  color: #6c757d !important;
+}
+
+.dokumentasi-button {
+  background-color: green;
+  border-color: green;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.dokumentasi-list {
+  padding: 20px 0;
+}
+
+.dokumentasi-detail {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  min-height: 70vh;
+  margin: 20px 0;
+}
+
+.dokumentasi-detail h2 {
+  color: #333;
+}
+
+.button-back {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  color: #fff;
+}
+
+.button-back:hover {
+  background-color: #fff;
+  color: #28a745;
+}
+
+.lightbox-toolbar-button {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .dokumentasi-title {
+    font-size: 1.25rem;
+  }
+
+  .dokumentasi-description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .dokumentasi-title {
+    font-size: 1rem;
+  }
+
+  .dokumentasi-description {
+    font-size: 0.75rem;
+  }
+
+  .dokumentasi-button {
+    padding: 0.5rem 1rem;
+  }
+}

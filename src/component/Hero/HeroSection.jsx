@@ -13,7 +13,7 @@ export default function HeroSection({ title, subtitle, imageUrl }) {
           >
             <div className="hero-overlay"></div>
             <div className="hero-text">
-              <h3>{title}</h3>
+              <h1>{title}</h1>
               <p>{subtitle}</p>
             </div>
           </div>

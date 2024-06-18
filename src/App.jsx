@@ -7,7 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import EducationPage from "./pages/EducationPage";
 import ProtectedRoute from "./component/ProtectedRoute";
-import ArticleDetail from "./component/Article/ArticleDetail";
+import ArticleDetail from "./component/EduComp/Article/ArticleDetail";
 import FormPelaporanSampah from "./component/Form/FormPelaporanSampah";
 import FormWithMap from "./component/Form/FormPelaloranLokasi";
 
@@ -35,6 +35,8 @@ import { AnimatePresence } from "framer-motion";
 import ForbiddenPage from "./component/error/ForbiddenPage";
 import NotFoundPage from "./component/error/NotFoundPage";
 import LacakStatusLapUserPage from "./pages/dashboardUser/LacakLaporan";
+import DokumentasiLokasi from "./component/EduComp/Dokumentasi/DokumentasiLokasi";
+import DokumentasiSampah from "./component/EduComp/Dokumentasi/DokumentasiSampah";
 
 function App() {
   const dispatch = useDispatch();
@@ -86,6 +88,14 @@ function App() {
             />
             <Route path="/edukasi" element={<EducationPage />} />
             <Route path="/edukasi/artikel/:id" element={<ArticleDetail />} />
+            <Route
+              path="/dokumentasi/tpa-bank-sampah"
+              element={<DokumentasiLokasi />}
+            />
+            <Route
+              path="/dokumentasi/sebaran-sampah"
+              element={<DokumentasiSampah />}
+            />
             <Route path="/sebaransampah" element={<SebaranSampahPage />} />
             <Route path="/sebaranlokasi" element={<SebaranLokasiPage />} />
 

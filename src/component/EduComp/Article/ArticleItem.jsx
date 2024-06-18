@@ -10,15 +10,16 @@ export default function ArticleItem({ article }) {
   };
 
   return (
-    <div style={{ padding: "0 10px" }} onClick={handleClick}>
+    <div style={{ padding: "0 10px" }}>
       <Card className="custom-card">
-        <Card.Img variant="top" src={article.imageUrl} className="card-image" />
+        <Card.Img variant="top" src={article.image} className="card-image" />
         <Card.Body>
-          <Card.Subtitle className="mb-2 text-muted">
+          <Card.Subtitle className="mb-2 text-success">
             {article.tag}
           </Card.Subtitle>
-          <Card.Title>{article.title}</Card.Title>
-          <Card.Text>{article.description}</Card.Text>
+          <Card.Title onClick={handleClick} style={{ cursor: "pointer" }}>
+            {article.title}
+          </Card.Title>
           <div className="author-info">
             <img
               src="https://via.placeholder.com/30"

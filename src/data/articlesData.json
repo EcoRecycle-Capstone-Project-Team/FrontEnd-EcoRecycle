@@ -1,49 +1,154 @@
 [
   {
-    "id": 1,
+    "id": 3,
+    "title": "Peran Bank Sampah dalam Mengurangi Volume Sampah",
+    "imageUrl": "https://via.placeholder.com/150",
+    "date": "28 April 2023",
+    "author": "M. Natasya Ramadana",
+    "image": "/assets/img-articel-4.jpg",
+    "tag": "#wasteBank",
+    "desc": "<p>Bank sampah adalah salah satu inisiatif penting dalam mengurangi volume sampah di masyarakat. Dengan konsep yang menggabungkan ekonomi dan lingkungan, bank sampah memberikan insentif kepada masyarakat untuk memilah dan mengelola sampah mereka dengan lebih baik. Masyarakat dapat menukarkan sampah yang dapat didaur ulang dengan insentif ekonomi, seperti uang tunai atau produk tertentu.</p><p>Bank sampah tidak hanya membantu mengurangi volume sampah yang masuk ke TPA, tetapi juga meningkatkan kesadaran lingkungan di kalangan masyarakat. Program ini juga menciptakan lapangan kerja dan memberikan manfaat ekonomi yang signifikan. &rdquo;Mengelola sampah dengan bijak adalah langkah penting menuju keberlanjutan,&rdquo; kata seorang aktivis lingkungan. Bank sampah membuktikan bahwa dengan pendekatan yang tepat, kita dapat mengubah sampah menjadi sumber daya yang berharga.</p>",
+    "articleDetail": [
+      {
+        "desc": "<h2>Konsep Bank Sampah</h2><p>Bank sampah berfungsi sebagai tempat di mana masyarakat dapat menukarkan sampah yang dapat didaur ulang dengan insentif ekonomi, seperti uang tunai atau produk tertentu. Konsep ini mendorong masyarakat untuk lebih sadar dalam memilah sampah dan mendukung daur ulang.</p>"
+      },
+      {
+        "desc": "<h2>Manfaat Ekonomi dan Sosial</h2><p>Bank sampah memberikan manfaat ekonomi dengan menciptakan lapangan kerja dan sumber pendapatan bagi masyarakat. Selain itu, mereka juga berperan dalam edukasi lingkungan dan meningkatkan kesadaran masyarakat tentang pentingnya pengelolaan sampah yang baik.</p>"
+      },
+      {
+        "desc": "<h2>Contoh Keberhasilan Bank Sampah</h2><p>Banyak bank sampah di berbagai daerah telah menunjukkan keberhasilan dalam mengurangi volume sampah dan meningkatkan kesejahteraan masyarakat. Contoh-contoh ini menunjukkan bahwa inisiatif lokal dapat memberikan dampak positif yang signifikan.</p>"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Daur Ulang Sampah Elektronik: Tantangan dan Peluang",
+    "imageUrl": "https://via.placeholder.com/150",
+    "date": "10 Mei 2023",
+    "author": "M. Natasya Ramadana",
+    "image": "/assets/img-articel-3.jpg",
+    "tag": "#eWaste",
+    "desc": "<p>Sampah elektronik merupakan salah satu jenis sampah yang paling cepat berkembang di dunia, seiring dengan peningkatan penggunaan perangkat elektronik. Tantangan utama dalam mendaur ulang sampah elektronik adalah penanganan bahan berbahaya dan pemulihan komponen berharga tanpa merusak lingkungan atau kesehatan pekerja. Namun, ada banyak peluang ekonomi yang bisa dihasilkan dari daur ulang elektronik, seperti pemulihan logam berharga.</p><p>Inisiatif global dan teknologi baru terus berkembang untuk mengatasi tantangan ini. Banyak negara dan perusahaan telah meluncurkan program pengumpulan perangkat bekas dan teknologi pemrosesan baru. &rdquo;Kita harus melihat sampah elektronik bukan sebagai limbah, tetapi sebagai sumber daya yang belum dimanfaatkan,&bdquo; kata seorang pakar teknologi. Dengan pendekatan yang tepat, daur ulang sampah elektronik dapat menjadi solusi yang berkelanjutan dan menguntungkan.</p>",
+    "articleDetail": [
+      {
+        "desc": "<h2>Tantangan dalam Daur Ulang Elektronik</h2><p>Sampah elektronik sering mengandung bahan berbahaya yang memerlukan penanganan khusus. Tantangan utama adalah memisahkan komponen berharga dari limbah tanpa merusak lingkungan atau kesehatan pekerja.</p>"
+      },
+      {
+        "desc": "<h2>Peluang Ekonomi dalam Daur Ulang Elektronik</h2><p>Daur ulang elektronik menawarkan peluang ekonomi yang signifikan. Logam berharga seperti emas, perak, dan tembaga dapat dipulihkan dari perangkat elektronik bekas, menciptakan sumber pendapatan baru dan mengurangi kebutuhan akan penambangan bahan baru.</p>"
+      },
+      {
+        "desc": "<h2>Inisiatif Global dalam Daur Ulang Elektronik</h2><p>Banyak negara dan perusahaan telah meluncurkan inisiatif untuk meningkatkan daur ulang sampah elektronik. Program-program ini mencakup pengumpulan perangkat bekas, teknologi pemrosesan baru, dan kampanye kesadaran masyarakat.</p>"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Pengelolaan Sampah di Pedesaan: Tantangan dan Solusi",
+    "imageUrl": "https://via.placeholder.com/150",
+    "date": "22 Juni 2023",
+    "author": "M. Natasya Ramadana",
+    "image": "/assets/img-articel-5.jpg",
+    "tag": "#ruralWaste",
+    "desc": "<p>Pengelolaan sampah di pedesaan sering menghadapi tantangan unik yang berbeda dari kota-kota besar. Infrastruktur yang kurang memadai dan kebiasaan membakar sampah adalah beberapa masalah yang umum ditemui. Kurangnya akses ke layanan daur ulang juga menambah kompleksitas pengelolaan sampah di pedesaan. Namun, dengan solusi inovatif dan pendekatan yang tepat, masalah ini dapat diatasi.</p><p>Beberapa solusi inovatif termasuk program pengomposan komunitas, bank sampah desa, dan inisiatif pendidikan untuk meningkatkan kesadaran tentang pentingnya pengelolaan sampah yang baik. Kolaborasi dengan organisasi non-pemerintah dan perusahaan juga dapat membantu menyediakan sumber daya yang diperlukan. &rdquo;Setiap langkah kecil menuju pengelolaan sampah yang lebih baik dapat memberikan dampak besar,&bdquo; kata seorang pegiat lingkungan. Dengan pendekatan yang kolaboratif, pengelolaan sampah di pedesaan dapat ditingkatkan.</p>",
+    "articleDetail": [
+      {
+        "desc": "<h2>Tantangan Pengelolaan Sampah di Pedesaan</h2><p>Kurangnya infrastruktur pengelolaan sampah dan akses ke layanan daur ulang adalah tantangan utama di pedesaan. Banyak desa juga menghadapi masalah dengan kebiasaan membakar sampah yang tidak ramah lingkungan.</p>"
+      },
+      {
+        "desc": "<h2>Solusi Inovatif untuk Desa</h2><p>Beberapa solusi inovatif termasuk program pengomposan komunitas, bank sampah desa, dan inisiatif pendidikan untuk meningkatkan kesadaran tentang pentingnya pengelolaan sampah yang baik. Kolaborasi dengan organisasi non-pemerintah dan perusahaan juga dapat membantu menyediakan sumber daya yang diperlukan.</p>"
+      },
+      {
+        "desc": "<h2>Studi Kasus: Keberhasilan di Desa</h2><p>Artikel ini juga menyajikan beberapa studi kasus dari desa-desa yang telah berhasil menerapkan program pengelolaan sampah yang efektif, menunjukkan bahwa dengan pendekatan yang tepat, masalah sampah di pedesaan dapat diatasi.</p>"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Pentingnya Pendidikan Lingkungan dalam Pengelolaan Sampah",
+    "imageUrl": "https://via.placeholder.com/150",
+    "date": "5 Juli 2023",
+    "author": "M. Natasya Ramadana",
+    "image": "/assets/img-articel-6.jpg",
+    "tag": "#environmentEducation",
+    "desc": "<p>Pendidikan lingkungan memainkan peran kunci dalam pengelolaan sampah yang efektif. Artikel ini membahas pentingnya pendidikan lingkungan dan bagaimana program edukasi dapat membantu masyarakat lebih sadar dan bertanggung jawab terhadap pengelolaan sampah.</p>",
+    "articleDetail": [
+      {
+        "desc": "<h2>Program Pendidikan di Sekolah</h2><p>Banyak sekolah telah mengintegrasikan pendidikan lingkungan dalam kurikulum mereka. Program ini mengajarkan siswa tentang pentingnya daur ulang, pengurangan sampah, dan cara-cara untuk menjaga lingkungan tetap bersih.</p>"
+      },
+      {
+        "desc": "<h2>Kampanye Kesadaran Masyarakat</h2><p>Kampanye kesadaran masyarakat dapat dilakukan melalui berbagai media, termasuk iklan, seminar, dan workshop. Tujuannya adalah untuk meningkatkan pemahaman masyarakat tentang dampak negatif sampah dan pentingnya pengelolaan sampah yang baik.</p>"
+      },
+      {
+        "desc": "<h2>Peran Organisasi Non-Pemerintah</h2><p>Banyak organisasi non-pemerintah (NGO) yang aktif dalam pendidikan lingkungan. Mereka bekerja sama dengan komunitas lokal untuk menyediakan sumber daya dan pelatihan yang diperlukan untuk pengelolaan sampah yang berkelanjutan.</p>"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Teknologi Terbaru dalam Pengelolaan Sampah",
+    "imageUrl": "https://via.placeholder.com/150",
+    "date": "30 Agustus 2023",
+    "author": "M. Natasya Ramadana",
+    "image": "/assets/img-articel-7.jpg",
+    "tag": "#wasteTechnology",
+    "desc": "<p>Teknologi memainkan peran penting dalam pengelolaan sampah modern. Artikel ini membahas berbagai teknologi terbaru yang digunakan untuk mengelola sampah secara lebih efisien dan ramah lingkungan.</p>",
+    "articleDetail": [
+      {
+        "desc": "<h2>Teknologi Daur Ulang Otomatis</h2><p>Teknologi daur ulang otomatis menggunakan robot dan AI untuk memisahkan dan memproses sampah dengan efisiensi tinggi. Teknologi ini dapat mengurangi kontaminasi sampah daur ulang dan meningkatkan kualitas bahan daur ulang.</p>"
+      },
+      {
+        "desc": "<h2>Waste-to-Energy</h2><p>Teknologi waste-to-energy mengubah sampah menjadi energi listrik atau panas. Ini adalah solusi yang efektif untuk mengurangi volume sampah di tempat pembuangan akhir dan menghasilkan sumber energi yang dapat diperbarui.</p>"
+      },
+      {
+        "desc": "<h2>Sensor dan Monitoring</h2><p>Sistem sensor dan monitoring digunakan untuk melacak volume sampah dan mengelola pengumpulan sampah secara lebih efisien. Teknologi ini membantu dalam mengurangi biaya operasional dan meningkatkan efektivitas pengelolaan sampah.</p>"
+      }
+    ]
+  },
+  {
+    "id": 8,
     "title": "5 Jenis Sampah yang dapat diolah dan dikembangkan",
     "imageUrl": "https://via.placeholder.com/150",
     "date": "32 Februari 2023",
-    "image": "./src/assets/article1.png",
-    "content": "Konten lengkap artikel pertama...",
-    "tag": "#tag1",
-    "desc": "",
+    "author": "M. Natasya Ramadana",
+    "image": "/assets/img-artikel-1.jpg",
+    "tag": "#ecoGreen",
+    "desc": "<p>Sampah adalah masalah besar yang dihadapi oleh banyak negara di dunia. Namun, tidak semua sampah harus berakhir di tempat pembuangan akhir. Banyak jenis sampah yang sebenarnya bisa diolah dan dikembangkan menjadi sesuatu yang berguna. Pengelolaan sampah yang baik tidak hanya membantu mengurangi volume sampah yang masuk ke TPA (Tempat Pembuangan Akhir) tetapi juga memberikan nilai ekonomi dan lingkungan yang signifikan. Dengan inovasi dan upaya yang tepat, kita dapat mengubah sampah menjadi sumber daya yang bermanfaat.</p><p>Sebagai contoh, sampah organik dapat diubah menjadi kompos, sementara sampah plastik dan kaca dapat didaur ulang menjadi produk baru. Pengelolaan sampah yang efektif juga dapat menciptakan lapangan kerja baru dan mengurangi dampak negatif terhadap lingkungan. Seperti yang dikatakan oleh Jane Goodall, &rdquo;Kita tidak akan pernah dapat menyelesaikan semua masalah lingkungan kita, tetapi kita bisa mulai menguranginya dengan mengambil tindakan kecil setiap hari.&rdquo;</p>",
     "articleDetail": [
       {
-        "imgDetail": "",
-        "desc": ""
+        "desc": "<h2>Sampah Organik</h2><p>Sampah organik meliputi sisa makanan, daun, ranting, dan bahan-bahan lain yang mudah terurai secara alami. Sampah jenis ini dapat diolah menjadi kompos, yang merupakan pupuk alami untuk tanaman. Proses pengomposan tidak hanya membantu mengurangi volume sampah, tetapi juga menghasilkan produk yang bermanfaat bagi pertanian dan pekarangan rumah tangga.</p>"
+      },
+      {
+        "desc": "<h2>Sampah Plastik</h2><p>Plastik adalah salah satu jenis sampah yang paling sulit terurai dan dapat mencemari lingkungan selama ratusan tahun. Namun, sampah plastik dapat diolah kembali menjadi berbagai produk baru melalui proses daur ulang. Misalnya, botol plastik dapat diubah menjadi pakaian, mainan, atau bahkan bahan bangunan. Inovasi dalam teknologi daur ulang terus berkembang, membuka lebih banyak peluang untuk memanfaatkan sampah plastik.</p>"
+      },
+      {
+        "desc": "<h2>Sampah Kertas</h2><p>Sampah kertas, seperti koran bekas, majalah, dan karton, dapat didaur ulang menjadi kertas baru. Proses daur ulang kertas mengurangi kebutuhan akan penebangan pohon dan membantu menjaga hutan. Selain itu, kertas daur ulang dapat digunakan untuk membuat produk kreatif seperti seni kertas, kertas pembungkus, dan bahan pendidikan.</p>"
+      },
+      {
+        "desc": "<h2>Sampah Kaca</h2><p>Kaca adalah bahan yang dapat didaur ulang tanpa kehilangan kualitasnya. Botol dan wadah kaca bekas dapat dilebur dan dibentuk kembali menjadi produk kaca baru. Daur ulang kaca tidak hanya mengurangi sampah, tetapi juga menghemat energi yang diperlukan untuk memproduksi kaca dari bahan baku alami.</p>"
+      },
+      {
+        "desc": "<h2>Sampah Elektronik</h2><p>Sampah elektronik, seperti komputer, telepon seluler, dan perangkat elektronik lainnya, mengandung bahan berharga yang dapat dipulihkan dan digunakan kembali. Daur ulang sampah elektronik membantu mengurangi kebutuhan akan penambangan bahan mentah dan mengurangi dampak lingkungan dari limbah elektronik. Selain itu, beberapa komponen elektronik dapat diperbaiki dan digunakan kembali, memberikan nilai tambah bagi produk yang sudah ada.</p>"
       }
     ]
   },
   {
-    "id": 2,
-    "title": "5 Step Menjadi Peduli Terhadap Lingkungan",
+    "id": 9,
+    "title": "Inovasi Pengelolaan Sampah Plastik di Kota Besar",
     "imageUrl": "https://via.placeholder.com/150",
-    "date": "25 Maret 2022",
-    "image": "./src/assets/article2.png",
-    "content": "Konten lengkap artikel kedua...",
-    "tag": "#tag2",
-    "desc": "",
+    "date": "15 Maret 2023",
+    "author": "M. Natasya Ramadana",
+    "image": "/assets/img-articel-2.png",
+    "tag": "#plasticRecycling",
+    "desc": "<p>Kota-kota besar di seluruh dunia menghadapi tantangan besar dalam pengelolaan sampah plastik. Dengan populasi yang padat dan konsumsi plastik yang tinggi, diperlukan inovasi dalam teknologi dan strategi pengelolaan sampah untuk memastikan keberlanjutan lingkungan. Teknologi canggih seperti pemilahan otomatis menggunakan sensor dan AI telah menunjukkan hasil yang positif dalam meningkatkan efisiensi daur ulang plastik.</p><p>Selain itu, program daur ulang yang melibatkan komunitas lokal juga berperan penting dalam mengurangi sampah plastik. Program ini tidak hanya meningkatkan kesadaran masyarakat tentang pentingnya daur ulang, tetapi juga menciptakan lapangan kerja dan peluang ekonomi baru. &rdquo;Inovasi adalah kunci untuk mencapai keberlanjutan,&rdquo; kata seorang ahli lingkungan. Dengan terus berinovasi, kita dapat mengatasi tantangan sampah plastik di kota besar.</p>",
     "articleDetail": [
       {
-        "imgDetail": "",
-        "desc": ""
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "title": "5 Step Menjadi Peduli Terhadap Lingkungan",
-    "imageUrl": "https://via.placeholder.com/150",
-    "date": "25 Maret 2022",
-    "image": "./src/assets/article2.png",
-    "content": "Konten lengkap artikel kedua...",
-    "tag": "#tag3",
-    "desc": "",
-    "articleDetail": [
+        "desc": "<h2>Teknologi Pemilahan Otomatis</h2><p>Salah satu inovasi utama adalah teknologi pemilahan otomatis yang menggunakan sensor dan AI untuk memisahkan plastik dari jenis sampah lainnya dengan efisiensi tinggi. Teknologi ini meningkatkan jumlah plastik yang dapat didaur ulang dan mengurangi kontaminasi sampah daur ulang.</p>"
+      },
       {
-        "imgDetail": "",
-        "desc": ""
+        "desc": "<h2>Program Daur Ulang Komunitas</h2><p>Banyak kota besar telah mengadopsi program daur ulang yang melibatkan komunitas lokal. Program ini tidak hanya meningkatkan kesadaran masyarakat tentang pentingnya daur ulang, tetapi juga menciptakan lapangan kerja dan peluang ekonomi baru.</p>"
+      },
+      {
+        "desc": "<h2>Penggunaan Plastik Daur Ulang dalam Konstruksi</h2><p>Plastik daur ulang sekarang digunakan dalam berbagai aplikasi konstruksi, seperti pembuatan batu bata plastik, aspal plastik, dan bahan bangunan lainnya. Penggunaan ini membantu mengurangi volume sampah plastik dan memanfaatkan bahan yang sebelumnya dianggap limbah.</p>"
       }
     ]
   }

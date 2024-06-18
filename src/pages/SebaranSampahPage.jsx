@@ -27,42 +27,44 @@ export default function SebaranSampahPage() {
   return (
     <>
       <Navigation />
-      <Container>
-        <div className="mb-4">
-          <h2 className="text-center mb-4">
-            Sebaran Lokasi Sampah Terselesaikan
-          </h2>
-          <HeroSection
-            title="Sebaran Lokasi Sampah Yang Berhasil Terselesaikan"
-            subtitle="Lihat perkembangan dan partisipasi masyarakat dalam menjaga kebersihan lingkungan."
-            imageUrl="/assets/background-sampah.jpg"
-          />
-        </div>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div variants={itemVariants}>
-            <MapSebaranSampah />
+      <div className="sebaran-sampah">
+        <Container>
+          <div className="mb-4">
+            <h2 className="text-center mb-4">
+              Sebaran Lokasi Sampah Terselesaikan
+            </h2>
+            <HeroSection
+              title="Sebaran Lokasi Sampah Yang Berhasil Terselesaikan"
+              subtitle="Lihat perkembangan dan partisipasi masyarakat dalam menjaga kebersihan lingkungan."
+              imageUrl="/assets/background-sampah.jpg"
+            />
+          </div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div variants={itemVariants}>
+              <MapSebaranSampah />
+            </motion.div>
+            <Row>
+              <Col md={6}>
+                <motion.div variants={itemVariants}>
+                  <SampahChart />
+                </motion.div>
+              </Col>
+              <Col md={6}>
+                <motion.div variants={itemVariants}>
+                  <SampahLineChart />
+                </motion.div>
+              </Col>
+            </Row>
+            <motion.div variants={itemVariants}>
+              <SampahTable />
+            </motion.div>
           </motion.div>
-          <Row>
-            <Col md={6}>
-              <motion.div variants={itemVariants}>
-                <SampahChart />
-              </motion.div>
-            </Col>
-            <Col md={6}>
-              <motion.div variants={itemVariants}>
-                <SampahLineChart />
-              </motion.div>
-            </Col>
-          </Row>
-          <motion.div variants={itemVariants}>
-            <SampahTable />
-          </motion.div>
-        </motion.div>
-      </Container>
+        </Container>
+      </div>
     </>
   );
 }

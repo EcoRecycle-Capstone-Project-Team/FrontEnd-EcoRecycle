@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import articlesData from "../../data/articlesData.json";
+import articlesData from "../../../data/articlesData.json";
 import Slider from "react-slick";
 import ArticleItem from "./ArticleItem";
 import { LuLeaf } from "react-icons/lu";

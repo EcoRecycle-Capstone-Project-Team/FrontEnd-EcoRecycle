@@ -9,6 +9,8 @@ const SampahTable = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
+  console.log(sampahLocations);
+
   const handleImageClick = (image) => {
     setSelectedImage(image);
     setShowModal(true);

@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  LoadScript,
+  Marker,
+  InfoWindowF,
+} from "@react-google-maps/api";
 import {
   Container,
   Card,
@@ -21,8 +26,13 @@ import { fetchTpaLocations } from "../../utils/api";
 
 function MainMap() {
   const dispatch = useDispatch();
-  const { tpaLocations, bankSampahLocations, userLocation, showNearest } =
-    useSelector((state) => state.maps);
+  const {
+    tpaLocations,
+    bankSampahLocations,
+    selectedLocation,
+    userLocation,
+    showNearest,
+  } = useSelector((state) => state.maps);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [activeLegend, setActiveLegend] = useState("All");
 
@@ -563,6 +573,7 @@ function MainMap() {
         <Col md={9}>
           <LoadScript
             googleMapsApiKey={apiKey}
+            loadingElement={<div>Loading...</div>}
             onLoad={() => setMapLoaded(true)}
           >
             {mapLoaded && (
@@ -579,6 +590,68 @@ function MainMap() {
                   />
                 )}
                 {renderMarkers()}
+                {selectedLocation && (
+                  <InfoWindowF
+                    position={{
+                      lat: selectedLocation.lat,
+                      lng: selectedLocation.lng,
+                    }}
+                    onCloseClick={() => dispatch(setSelectedLocation(null))}
+                  >
+                    <div
+                      style={{
+                        width: "250px",
+                        padding: "10px",
+                        fontFamily: "Arial, sans-serif",
+                      }}
+                    >
+                      {selectedLocation.image && (
+                        <img
+                          src={selectedLocation.image}
+                          alt={selectedLocation.name}
+                          style={{ width: "100%", height: "auto" }}
+                        />
+                      )}
+                      <h3 style={{ margin: "5px 0", color: "black" }}>
+                        {selectedLocation.name}
+                      </h3>
+                      <p style={{ margin: "5px 0", color: "gray" }}>
+                        Status: {selectedLocation.status}
+                      </p>
+                      {selectedLocation.distance !== undefined && (
+                        <p>
+                          Distance: {selectedLocation.distance.toFixed(2)} km
+                        </p>
+                      )}
+                      <p style={{ margin: "5px 0", color: "gray" }}>
+                        <strong>Pelapor:</strong>{" "}
+                        {selectedLocation.nama_pelapor}
+                      </p>
+                      <p style={{ margin: "5px 0", color: "gray" }}>
+                        <strong>Alamat:</strong> {selectedLocation.alamat}
+                      </p>
+                      <p style={{ margin: "5px 0", color: "gray" }}>
+                        <strong>Kota:</strong> {selectedLocation.kota}
+                      </p>
+                      <p style={{ margin: "5px 0", color: "gray" }}>
+                        <strong>Kode Pos:</strong> {selectedLocation.kode_pos}
+                      </p>
+                      <p style={{ margin: "5px 0", color: "gray" }}>
+                        <strong>Provinsi:</strong> {selectedLocation.provinsi}
+                      </p>
+                      <p
+                        style={{
+                          margin: "5px 0",
+                          fontSize: "12px",
+                          color: "gray",
+                        }}
+                      >
+                        <strong>Dibuat:</strong>{" "}
+                        {new Date(selectedLocation.created_at).toLocaleString()}
+                      </p>
+                    </div>
+                  </InfoWindowF>
+                )}
               </GoogleMap>
             )}
           </LoadScript>
@@ -593,7 +666,7 @@ function MainMap() {
                   onClick={() => handleLegendClick("TPA")}
                 >
                   <img
-                    src="/assets/icon-tpamarker.png"
+                    src="assets/icon-tpamarker.png"
                     alt="TPA Icon"
                     style={{
                       marginRight: "10px",
@@ -608,7 +681,7 @@ function MainMap() {
                   onClick={() => handleLegendClick("Bank Sampah")}
                 >
                   <img
-                    src="/assets/icon-banksampahmarker.png"
+                    src="assets/icon-banksampahmarker.png"
                     alt="Bank Sampah Icon"
                     style={{
                       marginRight: "10px",
@@ -638,7 +711,7 @@ function MainMap() {
                     <Card className="my-2">
                       <Card.Body>
                         <Card.Title>TPA Terdekat</Card.Title>
-                        <Card.Text>
+                        <Card.Text className="renew-design">
                           {nearestTpa.name}
                           <br />
                           Jarak: {nearestTpa.distance.toFixed(2)} km
@@ -658,7 +731,7 @@ function MainMap() {
                     <Card className="my-2">
                       <Card.Body>
                         <Card.Title>Bank Sampah Terdekat</Card.Title>
-                        <Card.Text>
+                        <Card.Text className="renew-design">
                           {nearestBankSampah.name}
                           <br />
                           Jarak: {nearestBankSampah.distance.toFixed(2)} km
