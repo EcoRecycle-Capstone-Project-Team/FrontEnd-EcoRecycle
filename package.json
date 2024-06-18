@@ -36,7 +36,7 @@
     "react-typed": "^2.0.12",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.11",
-    "sweetalert2": "^10.16.11",
+    "sweetalert2": "^11.10.8",
     "yet-another-react-lightbox": "^3.20.0"
   },
   "devDependencies": {
