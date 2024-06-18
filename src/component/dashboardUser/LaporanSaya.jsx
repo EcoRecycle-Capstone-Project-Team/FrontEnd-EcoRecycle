@@ -11,8 +11,8 @@ const NoReportIllustration = () => (
   <div className="no-report-illustration">
     <img
       src="/assets/no-report.png"
-      style={{ width: "40%" }}
       alt="Illustration"
+      className="img-infodata"
     />
     <p>Yah Anda belum memiliki laporan. Yuk laporkan masalah sampah anda!</p>
   </div>
@@ -72,7 +72,7 @@ const LaporanSaya = () => {
                 <NoReportIllustration />
               ) : (
                 <div className="table-responsive">
-                  <Table striped bordered hover>
+                  <Table striped bordered hover responsive>
                     <thead>
                       <tr>
                         <th>No</th>

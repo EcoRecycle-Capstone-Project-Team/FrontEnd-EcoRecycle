@@ -2,6 +2,7 @@
   "name": "capstone-project",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://ecorecycle.my.id/",
   "type": "module",
   "scripts": {
     "dev": "vite",

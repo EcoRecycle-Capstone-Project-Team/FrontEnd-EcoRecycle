@@ -42,7 +42,7 @@ function LacakStatusUser() {
     <div className="no-report-illustration">
       <img
         src="/assets/riwayat.png"
-        style={{ width: "40%" }}
+        className="img-infodata"
         alt="Illustration"
       />
       <p>
@@ -95,7 +95,7 @@ function LacakStatusUser() {
               {userReports.length === 0 ? (
                 <NoReportIllustration />
               ) : (
-                <Container>
+                <Container className="nopad">
                   {pendingInProgressReports.length > 0 && (
                     <Alert variant="warning" className="text-center mb-4">
                       Anda memiliki {pendingInProgressReports.length} laporan
@@ -118,7 +118,7 @@ function LacakStatusUser() {
                                 className="report-img"
                               />
                             </Col>
-                            <Col md={6} style={{ marginLeft: "-1rem" }}>
+                            <Col md={6} className="isicard">
                               <Card.Body>
                                 <h4 style={{ color: "#212529" }}>
                                   <td>
@@ -164,7 +164,6 @@ function LacakStatusUser() {
                                 className={`${getStatusIconClass(
                                   report.status
                                 )} profile-option-icon icon`}
-                                style={{ fontSize: "3rem" }}
                               ></i>
                             </Col>
                           </Row>
@@ -196,7 +195,7 @@ function LacakStatusUser() {
                                     className="report-img"
                                   />
                                 </Col>
-                                <Col md={6} style={{ marginLeft: "-1rem" }}>
+                                <Col md={6} className="isicard">
                                   <Card.Body>
                                     <h4 style={{ color: "#212529" }}>
                                       <i

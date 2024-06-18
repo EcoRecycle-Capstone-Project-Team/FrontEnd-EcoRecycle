@@ -11,7 +11,7 @@ const NoReportIllustration = () => (
   <div className="no-report-illustration">
     <img
       src="/assets/no-location-report.png"
-      style={{ width: "40%" }}
+      className="img-infodata"
       alt="Illustration"
     />
     <p>Yah Anda belum memiliki Kontribusi. Yuk tambahkan TPA di sekitar anda</p>
