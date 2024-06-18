@@ -2,11 +2,11 @@
 
 ## Teknologi Yang Digunakan
 Aplikasi dibangun menggunakan beberapa teknologi, diantaranya adalah:
-<a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=git,kubernetes,docker,c,vim" />
-</a>
+<p>
+  <img src="https://skillicons.dev/icons?i=react,kubernetes,docker,c,vim" />
+</p>
 
-## Panduan Kloning Repository Ini
+## Panduan Kloning Repository
 Untuk mengkloning repository front-end EcoRecycle ke komputer Anda, ikuti langkah-langkah berikut:
 
 1. **Pastikan Anda memiliki Git dan Node.js terinstal di komputer Anda.**  
@@ -30,13 +30,14 @@ Untuk mengkloning repository front-end EcoRecycle ke komputer Anda, ikuti langka
 
    ```bash
    npm install
-
+   
 6. Buat file baru .env di root directory proyek dan tambahkan kode berikut:
 
    ```bash
-   #untuk mendapatkan api key Google Maps Api, kamu dapat mengakses dan mendaftar melalui [Google Maps Platform](https://developers.google.com/maps)
    VITE_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
 
+> [!NOTE]
+> Untuk mendapatkan api key Google Maps Api, kamu dapat mengakses dan mendaftar melalui [Google Maps Platform](https://developers.google.com/maps)
 7. Jalankan proyek secara lokal menggunakan Vite:
 
    ```bash
