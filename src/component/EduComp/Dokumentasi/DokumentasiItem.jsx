@@ -3,17 +3,9 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Dokumentasi.css";
 
-const DokumentasiItem = ({
-  category,
-  title,
-  description,
-  link,
-  image,
-  author,
-}) => {
+const DokumentasiItem = ({ category, title, description, link, author }) => {
   return (
     <Card className="mb-4 dokumentasi-item shadow-lg rounded">
-      {image && <Card.Img variant="top" src={image} className="card-image" />}
       <Card.Body>
         <Card.Subtitle className="mb-2 text-primary">{category}</Card.Subtitle>
         <Card.Title className="dokumentasi-title">{title}</Card.Title>

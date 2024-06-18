@@ -43,11 +43,17 @@ export default function FormPelaporanSampah() {
   }, [dispatch, isLoggedIn]);
 
   useEffect(() => {
-    if (userProfile && userProfile.id && userProfile.name) {
+    if (
+      userProfile &&
+      userProfile.id &&
+      userProfile.name &&
+      userProfile.phone_number
+    ) {
       setFormValues((prevValues) => ({
         ...prevValues,
         user_id: userProfile.id,
         nama_pelapor: userProfile.name,
+        no_tlp: userProfile.phone_number,
       }));
     }
   }, [userProfile]);
@@ -147,21 +153,8 @@ export default function FormPelaporanSampah() {
               </GoogleMap>
             </LoadScript>
             <Form id="locationForm" onSubmit={handleSubmit} className="mt-4">
+              <input type="hidden" name="user_id" value={formValues.user_id} />
               <Row>
-                <Col md={6}>
-                  <Form.Group controlId="user_id">
-                    <Form.Label>User ID</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="user_id"
-                      value={formValues.user_id}
-                      onChange={handleInputChange}
-                      style={{ backgroundColor: "#e9ecef" }}
-                      required
-                      readOnly
-                    />
-                  </Form.Group>
-                </Col>
                 <Col md={6}>
                   <Form.Group controlId="nama_pelapor">
                     <Form.Label>Nama Pelapor</Form.Label>
@@ -176,19 +169,20 @@ export default function FormPelaporanSampah() {
                     />
                   </Form.Group>
                 </Col>
-              </Row>
-              <Row>
                 <Col md={6}>
                   <Form.Group controlId="no_tlp">
                     <Form.Label>No Telepon</Form.Label>
                     <Form.Control
-                      type="text"
+                      type="number"
                       name="no_tlp"
+                      value={formValues.no_tlp}
                       onChange={handleInputChange}
                       required
                     />
                   </Form.Group>
                 </Col>
+              </Row>
+              <Row>
                 <Col md={6}>
                   <Form.Group controlId="alamat">
                     <Form.Label>Alamat</Form.Label>
@@ -203,8 +197,6 @@ export default function FormPelaporanSampah() {
                     />
                   </Form.Group>
                 </Col>
-              </Row>
-              <Row>
                 <Col md={6}>
                   <Form.Group controlId="kota">
                     <Form.Label>Kota</Form.Label>
@@ -216,18 +208,6 @@ export default function FormPelaporanSampah() {
                       style={{ backgroundColor: "#e9ecef" }}
                       required
                       readOnly
-                    />
-                  </Form.Group>
-                </Col>
-                <Col md={6}>
-                  <Form.Group controlId="tgl_lapor">
-                    <Form.Label>Tanggal Lapor</Form.Label>
-                    <Form.Control
-                      type="date"
-                      name="tgl_lapor"
-                      value={formValues.tgl_lapor}
-                      onChange={handleInputChange}
-                      required
                     />
                   </Form.Group>
                 </Col>
@@ -244,6 +224,18 @@ export default function FormPelaporanSampah() {
                       style={{ backgroundColor: "#e9ecef" }}
                       required
                       readOnly
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={6}>
+                  <Form.Group controlId="tgl_lapor">
+                    <Form.Label>Tanggal Lapor</Form.Label>
+                    <Form.Control
+                      type="date"
+                      name="tgl_lapor"
+                      value={formValues.tgl_lapor}
+                      onChange={handleInputChange}
+                      required
                     />
                   </Form.Group>
                 </Col>

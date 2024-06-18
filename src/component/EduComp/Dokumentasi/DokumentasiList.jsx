@@ -12,7 +12,6 @@ const DokumentasiList = () => {
             title="Dokumentasi TPA dan Bank Sampah"
             description="Kumpulan gambar dari TPA dan Bank Sampah."
             link="/dokumentasi/tpa-bank-sampah"
-            image="https://via.placeholder.com/30"
             author="EcoRecycle"
           />
         </Col>
@@ -22,7 +21,6 @@ const DokumentasiList = () => {
             title="Dokumentasi Sebaran Sampah"
             description="Kumpulan gambar dari sebaran sampah di berbagai lokasi."
             link="/dokumentasi/sebaran-sampah"
-            image="https://via.placeholder.com/30"
             author="EcoRecycle"
           />
         </Col>

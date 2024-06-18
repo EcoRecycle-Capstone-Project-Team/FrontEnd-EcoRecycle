@@ -44,11 +44,17 @@ const FormWithMap = () => {
   }, [dispatch, isLoggedIn]);
 
   useEffect(() => {
-    if (userProfile && userProfile.id && userProfile.name) {
+    if (
+      userProfile &&
+      userProfile.id &&
+      userProfile.name &&
+      userProfile.phone_number
+    ) {
       setFormValues((prevValues) => ({
         ...prevValues,
         user_id: userProfile.id,
         nama_pelapor: userProfile.name,
+        no_tlp: userProfile.phone_number,
       }));
     }
   }, [userProfile]);
@@ -156,21 +162,8 @@ const FormWithMap = () => {
               </GoogleMap>
             </LoadScript>
             <Form id="locationForm" onSubmit={handleSubmit} className="mt-4">
+              <input type="hidden" name="user_id" value={formValues.user_id} />
               <Row>
-                <Col md={6}>
-                  <Form.Group controlId="user_id">
-                    <Form.Label>User ID</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="user_id"
-                      value={formValues.user_id}
-                      onChange={handleInputChange}
-                      style={{ backgroundColor: "#e9ecef" }}
-                      required
-                      readOnly
-                    />
-                  </Form.Group>
-                </Col>
                 <Col md={6}>
                   <Form.Group controlId="nama_pelapor">
                     <Form.Label>Nama Pelapor</Form.Label>
@@ -183,13 +176,11 @@ const FormWithMap = () => {
                     />
                   </Form.Group>
                 </Col>
-              </Row>
-              <Row>
                 <Col md={6}>
                   <Form.Group controlId="no_tlp">
                     <Form.Label>No Telepon</Form.Label>
                     <Form.Control
-                      type="text"
+                      type="number"
                       name="no_tlp"
                       value={formValues.no_tlp}
                       onChange={handleInputChange}
@@ -197,6 +188,8 @@ const FormWithMap = () => {
                     />
                   </Form.Group>
                 </Col>
+              </Row>
+              <Row>
                 <Col md={6}>
                   <Form.Group controlId="jenis_lokasi">
                     <Form.Label>Jenis Lokasi</Form.Label>
@@ -212,8 +205,6 @@ const FormWithMap = () => {
                     </Form.Control>
                   </Form.Group>
                 </Col>
-              </Row>
-              <Row>
                 <Col md={6}>
                   <Form.Group controlId="nama_lokasi">
                     <Form.Label>Nama Lokasi</Form.Label>
@@ -226,6 +217,8 @@ const FormWithMap = () => {
                     />
                   </Form.Group>
                 </Col>
+              </Row>
+              <Row>
                 <Col md={6}>
                   <Form.Group controlId="alamat">
                     <Form.Label>Alamat</Form.Label>
@@ -240,8 +233,6 @@ const FormWithMap = () => {
                     />
                   </Form.Group>
                 </Col>
-              </Row>
-              <Row>
                 <Col md={6}>
                   <Form.Group controlId="kota">
                     <Form.Label>Kota</Form.Label>
@@ -256,6 +247,8 @@ const FormWithMap = () => {
                     />
                   </Form.Group>
                 </Col>
+              </Row>
+              <Row>
                 <Col md={6}>
                   <Form.Group controlId="kode_pos">
                     <Form.Label>Kode Pos</Form.Label>
@@ -270,8 +263,6 @@ const FormWithMap = () => {
                     />
                   </Form.Group>
                 </Col>
-              </Row>
-              <Row>
                 <Col md={6}>
                   <Form.Group controlId="provinsi">
                     <Form.Label>Provinsi</Form.Label>
@@ -286,6 +277,8 @@ const FormWithMap = () => {
                     />
                   </Form.Group>
                 </Col>
+              </Row>
+              <Row>
                 <Col md={6}>
                   <Form.Group controlId="latitude">
                     <Form.Label>Latitude</Form.Label>
@@ -298,8 +291,6 @@ const FormWithMap = () => {
                     />
                   </Form.Group>
                 </Col>
-              </Row>
-              <Row>
                 <Col md={6}>
                   <Form.Group controlId="longitude">
                     <Form.Label>Longitude</Form.Label>
@@ -312,7 +303,9 @@ const FormWithMap = () => {
                     />
                   </Form.Group>
                 </Col>
-                <Col md={6}>
+              </Row>
+              <Row>
+                <Col md={12}>
                   <Form.Group controlId="img_tpa">
                     <Form.Label>Upload Image</Form.Label>
                     <Form.Control
@@ -325,9 +318,9 @@ const FormWithMap = () => {
                   </Form.Group>
                 </Col>
               </Row>
-                <Button variant="success" type="submit" className="mt-3">
-                  Submit
-                </Button>
+              <Button variant="success" type="submit" className="mt-3">
+                Submit
+              </Button>
             </Form>
           </Card.Body>
         </Card>
